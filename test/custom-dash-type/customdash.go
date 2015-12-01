@@ -67,7 +67,7 @@ func (b Bytes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(data)
 }
 
-func (b *Bytes) Size() int {
+func (b *Bytes) ProtoSize() int {
 	return len(*b)
 }
 

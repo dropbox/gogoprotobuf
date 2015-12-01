@@ -77,7 +77,7 @@ type isAllTypesOneOf_TestOneof interface {
 	Equal(interface{}) bool
 	VerboseEqual(interface{}) error
 	MarshalTo([]byte) (int, error)
-	Size() int
+	ProtoSize() int
 }
 
 type AllTypesOneOf_Field1 struct {
@@ -495,14 +495,14 @@ type isTwoOneofs_One interface {
 	Equal(interface{}) bool
 	VerboseEqual(interface{}) error
 	MarshalTo([]byte) (int, error)
-	Size() int
+	ProtoSize() int
 }
 type isTwoOneofs_Two interface {
 	isTwoOneofs_Two()
 	Equal(interface{}) bool
 	VerboseEqual(interface{}) error
 	MarshalTo([]byte) (int, error)
-	Size() int
+	ProtoSize() int
 }
 
 type TwoOneofs_Field1 struct {
@@ -704,7 +704,7 @@ type isCustomOneof_Custom interface {
 	Equal(interface{}) bool
 	VerboseEqual(interface{}) error
 	MarshalTo([]byte) (int, error)
-	Size() int
+	ProtoSize() int
 }
 
 type CustomOneof_Stringy struct {
@@ -3801,7 +3801,7 @@ func extensionToGoStringOne(e map[int32]github_com_gogo_protobuf_proto.Extension
 	return s
 }
 func (m *Subby) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -3828,7 +3828,7 @@ func (m *Subby) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *AllTypesOneOf) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -3976,7 +3976,7 @@ func (m *AllTypesOneOf_SubMessage) MarshalTo(data []byte) (int, error) {
 		i++
 		data[i] = 0x1
 		i++
-		i = encodeVarintOne(data, i, uint64(m.SubMessage.Size()))
+		i = encodeVarintOne(data, i, uint64(m.SubMessage.ProtoSize()))
 		n2, err := m.SubMessage.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -3986,7 +3986,7 @@ func (m *AllTypesOneOf_SubMessage) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 func (m *TwoOneofs) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -4070,7 +4070,7 @@ func (m *TwoOneofs_SubMessage2) MarshalTo(data []byte) (int, error) {
 		i++
 		data[i] = 0x2
 		i++
-		i = encodeVarintOne(data, i, uint64(m.SubMessage2.Size()))
+		i = encodeVarintOne(data, i, uint64(m.SubMessage2.ProtoSize()))
 		n5, err := m.SubMessage2.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -4080,7 +4080,7 @@ func (m *TwoOneofs_SubMessage2) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 func (m *CustomOneof) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -4123,7 +4123,7 @@ func (m *CustomOneof_CustomType) MarshalTo(data []byte) (int, error) {
 	i++
 	data[i] = 0x2
 	i++
-	i = encodeVarintOne(data, i, uint64(m.CustomType.Size()))
+	i = encodeVarintOne(data, i, uint64(m.CustomType.ProtoSize()))
 	n7, err := m.CustomType.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -4524,7 +4524,7 @@ func encodeVarintPopulateOne(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *Subby) Size() (n int) {
+func (m *Subby) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Sub != nil {
@@ -4537,11 +4537,11 @@ func (m *Subby) Size() (n int) {
 	return n
 }
 
-func (m *AllTypesOneOf) Size() (n int) {
+func (m *AllTypesOneOf) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.TestOneof != nil {
-		n += m.TestOneof.Size()
+		n += m.TestOneof.ProtoSize()
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -4549,92 +4549,92 @@ func (m *AllTypesOneOf) Size() (n int) {
 	return n
 }
 
-func (m *AllTypesOneOf_Field1) Size() (n int) {
+func (m *AllTypesOneOf_Field1) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
 	return n
 }
-func (m *AllTypesOneOf_Field2) Size() (n int) {
+func (m *AllTypesOneOf_Field2) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 5
 	return n
 }
-func (m *AllTypesOneOf_Field3) Size() (n int) {
+func (m *AllTypesOneOf_Field3) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sovOne(uint64(m.Field3))
 	return n
 }
-func (m *AllTypesOneOf_Field4) Size() (n int) {
+func (m *AllTypesOneOf_Field4) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sovOne(uint64(m.Field4))
 	return n
 }
-func (m *AllTypesOneOf_Field5) Size() (n int) {
+func (m *AllTypesOneOf_Field5) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sovOne(uint64(m.Field5))
 	return n
 }
-func (m *AllTypesOneOf_Field6) Size() (n int) {
+func (m *AllTypesOneOf_Field6) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sovOne(uint64(m.Field6))
 	return n
 }
-func (m *AllTypesOneOf_Field7) Size() (n int) {
+func (m *AllTypesOneOf_Field7) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sozOne(uint64(m.Field7))
 	return n
 }
-func (m *AllTypesOneOf_Field8) Size() (n int) {
+func (m *AllTypesOneOf_Field8) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sozOne(uint64(m.Field8))
 	return n
 }
-func (m *AllTypesOneOf_Field9) Size() (n int) {
+func (m *AllTypesOneOf_Field9) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 5
 	return n
 }
-func (m *AllTypesOneOf_Field10) Size() (n int) {
+func (m *AllTypesOneOf_Field10) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 5
 	return n
 }
-func (m *AllTypesOneOf_Field11) Size() (n int) {
+func (m *AllTypesOneOf_Field11) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
 	return n
 }
-func (m *AllTypesOneOf_Field12) Size() (n int) {
+func (m *AllTypesOneOf_Field12) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
 	return n
 }
-func (m *AllTypesOneOf_Field13) Size() (n int) {
+func (m *AllTypesOneOf_Field13) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 2
 	return n
 }
-func (m *AllTypesOneOf_Field14) Size() (n int) {
+func (m *AllTypesOneOf_Field14) ProtoSize() (n int) {
 	var l int
 	_ = l
 	l = len(m.Field14)
 	n += 1 + l + sovOne(uint64(l))
 	return n
 }
-func (m *AllTypesOneOf_Field15) Size() (n int) {
+func (m *AllTypesOneOf_Field15) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field15 != nil {
@@ -4643,23 +4643,23 @@ func (m *AllTypesOneOf_Field15) Size() (n int) {
 	}
 	return n
 }
-func (m *AllTypesOneOf_SubMessage) Size() (n int) {
+func (m *AllTypesOneOf_SubMessage) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.SubMessage != nil {
-		l = m.SubMessage.Size()
+		l = m.SubMessage.ProtoSize()
 		n += 2 + l + sovOne(uint64(l))
 	}
 	return n
 }
-func (m *TwoOneofs) Size() (n int) {
+func (m *TwoOneofs) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.One != nil {
-		n += m.One.Size()
+		n += m.One.ProtoSize()
 	}
 	if m.Two != nil {
-		n += m.Two.Size()
+		n += m.Two.ProtoSize()
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -4667,32 +4667,32 @@ func (m *TwoOneofs) Size() (n int) {
 	return n
 }
 
-func (m *TwoOneofs_Field1) Size() (n int) {
+func (m *TwoOneofs_Field1) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
 	return n
 }
-func (m *TwoOneofs_Field2) Size() (n int) {
+func (m *TwoOneofs_Field2) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 5
 	return n
 }
-func (m *TwoOneofs_Field3) Size() (n int) {
+func (m *TwoOneofs_Field3) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sovOne(uint64(m.Field3))
 	return n
 }
-func (m *TwoOneofs_Field34) Size() (n int) {
+func (m *TwoOneofs_Field34) ProtoSize() (n int) {
 	var l int
 	_ = l
 	l = len(m.Field34)
 	n += 2 + l + sovOne(uint64(l))
 	return n
 }
-func (m *TwoOneofs_Field35) Size() (n int) {
+func (m *TwoOneofs_Field35) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field35 != nil {
@@ -4701,20 +4701,20 @@ func (m *TwoOneofs_Field35) Size() (n int) {
 	}
 	return n
 }
-func (m *TwoOneofs_SubMessage2) Size() (n int) {
+func (m *TwoOneofs_SubMessage2) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.SubMessage2 != nil {
-		l = m.SubMessage2.Size()
+		l = m.SubMessage2.ProtoSize()
 		n += 2 + l + sovOne(uint64(l))
 	}
 	return n
 }
-func (m *CustomOneof) Size() (n int) {
+func (m *CustomOneof) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Custom != nil {
-		n += m.Custom.Size()
+		n += m.Custom.ProtoSize()
 	}
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -4722,27 +4722,27 @@ func (m *CustomOneof) Size() (n int) {
 	return n
 }
 
-func (m *CustomOneof_Stringy) Size() (n int) {
+func (m *CustomOneof_Stringy) ProtoSize() (n int) {
 	var l int
 	_ = l
 	l = len(m.Stringy)
 	n += 2 + l + sovOne(uint64(l))
 	return n
 }
-func (m *CustomOneof_CustomType) Size() (n int) {
+func (m *CustomOneof_CustomType) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.CustomType.Size()
+	l = m.CustomType.ProtoSize()
 	n += 2 + l + sovOne(uint64(l))
 	return n
 }
-func (m *CustomOneof_CastType) Size() (n int) {
+func (m *CustomOneof_CastType) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 2 + sovOne(uint64(m.CastType))
 	return n
 }
-func (m *CustomOneof_MyCustomName) Size() (n int) {
+func (m *CustomOneof_MyCustomName) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 2 + sovOne(uint64(m.MyCustomName))

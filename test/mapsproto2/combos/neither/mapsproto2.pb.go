@@ -2425,7 +2425,7 @@ func encodeVarintPopulateMapsproto2(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *FloatingPoint) Size() (n int) {
+func (m *FloatingPoint) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.F != nil {
@@ -2437,7 +2437,7 @@ func (m *FloatingPoint) Size() (n int) {
 	return n
 }
 
-func (m *AllMaps) Size() (n int) {
+func (m *AllMaps) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.StringToDoubleMap) > 0 {
@@ -2574,7 +2574,7 @@ func (m *AllMaps) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + len(k) + sovMapsproto2(uint64(len(k))) + 1 + l + sovMapsproto2(uint64(l))
 			n += mapEntrySize + 2 + sovMapsproto2(uint64(mapEntrySize))

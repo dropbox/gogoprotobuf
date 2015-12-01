@@ -64,14 +64,14 @@ The following message:
 
 given to the size plugin, will generate the following code:
 
-  func (m *B) Size() (n int) {
+  func (m *B) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.A.Size()
+	l = m.A.ProtoSize()
 	n += 1 + l + sovExample(uint64(l))
 	if len(m.G) > 0 {
 		for _, e := range m.G {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovExample(uint64(l))
 		}
 	}
@@ -90,7 +90,7 @@ and the following test code:
 		if err != nil {
 			panic(err)
 		}
-		size := p.Size()
+		size := p.ProtoSize()
 		if len(data) != size {
 			t.Fatalf("size %v != marshalled size %v", size, len(data))
 		}
@@ -105,7 +105,7 @@ and the following test code:
 		}
 		b.ResetTimer()
 		for i := 0; i < b.N; i++ {
-			total += pops[i%1000].Size()
+			total += pops[i%1000].ProtoSize()
 		}
 		b.SetBytes(int64(total / b.N))
 	}
@@ -117,13 +117,14 @@ package size
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
+
 	"github.com/gogo/protobuf/gogoproto"
 	"github.com/gogo/protobuf/proto"
 	descriptor "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
 	"github.com/gogo/protobuf/protoc-gen-gogo/generator"
 	"github.com/gogo/protobuf/vanity"
-	"strconv"
-	"strings"
 )
 
 type size struct {
@@ -388,7 +389,7 @@ func (p *size) generateField(proto3 bool, file *generator.FileDescriptor, messag
 				p.P(`l = 0`)
 				p.P(`if v != nil {`)
 				p.In()
-				p.P(`l= v.Size()`)
+				p.P(`l= v.ProtoSize()`)
 				p.Out()
 				p.P(`}`)
 				sum = append(sum, `l+sov`+p.localName+`(uint64(l))`)
@@ -400,12 +401,12 @@ func (p *size) generateField(proto3 bool, file *generator.FileDescriptor, messag
 		} else if repeated {
 			p.P(`for _, e := range m.`, fieldname, ` { `)
 			p.In()
-			p.P(`l=e.Size()`)
+			p.P(`l=e.ProtoSize()`)
 			p.P(`n+=`, strconv.Itoa(key), `+l+sov`, p.localName, `(uint64(l))`)
 			p.Out()
 			p.P(`}`)
 		} else {
-			p.P(`l=m.`, fieldname, `.Size()`)
+			p.P(`l=m.`, fieldname, `.ProtoSize()`)
 			p.P(`n+=`, strconv.Itoa(key), `+l+sov`, p.localName, `(uint64(l))`)
 		}
 	case descriptor.FieldDescriptorProto_TYPE_BYTES:
@@ -432,12 +433,12 @@ func (p *size) generateField(proto3 bool, file *generator.FileDescriptor, messag
 			if repeated {
 				p.P(`for _, e := range m.`, fieldname, ` { `)
 				p.In()
-				p.P(`l=e.Size()`)
+				p.P(`l=e.ProtoSize()`)
 				p.P(`n+=`, strconv.Itoa(key), `+l+sov`, p.localName, `(uint64(l))`)
 				p.Out()
 				p.P(`}`)
 			} else {
-				p.P(`l=m.`, fieldname, `.Size()`)
+				p.P(`l=m.`, fieldname, `.ProtoSize()`)
 				p.P(`n+=`, strconv.Itoa(key), `+l+sov`, p.localName, `(uint64(l))`)
 			}
 		}
@@ -494,7 +495,7 @@ func (p *size) Generate(file *generator.FileDescriptor) {
 		}
 		p.atleastOne = true
 		ccTypeName := generator.CamelCaseSlice(message.TypeName())
-		p.P(`func (m *`, ccTypeName, `) Size() (n int) {`)
+		p.P(`func (m *`, ccTypeName, `) ProtoSize() (n int) {`)
 		p.In()
 		p.P(`var l int`)
 		p.P(`_ = l`)
@@ -513,7 +514,7 @@ func (p *size) Generate(file *generator.FileDescriptor) {
 				}
 				p.P(`if m.`, fieldname, ` != nil {`)
 				p.In()
-				p.P(`n+=m.`, fieldname, `.Size()`)
+				p.P(`n+=m.`, fieldname, `.ProtoSize()`)
 				p.Out()
 				p.P(`}`)
 			}
@@ -549,7 +550,7 @@ func (p *size) Generate(file *generator.FileDescriptor) {
 				continue
 			}
 			ccTypeName := p.OneOfTypeName(message, f)
-			p.P(`func (m *`, ccTypeName, `) Size() (n int) {`)
+			p.P(`func (m *`, ccTypeName, `) ProtoSize() (n int) {`)
 			p.In()
 			p.P(`var l int`)
 			p.P(`_ = l`)

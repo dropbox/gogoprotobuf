@@ -72,7 +72,7 @@ func (uuid *Uuid) Unmarshal(data []byte) error {
 	return nil
 }
 
-func (uuid *Uuid) Size() int {
+func (uuid *Uuid) ProtoSize() int {
 	if uuid == nil {
 		return 0
 	}

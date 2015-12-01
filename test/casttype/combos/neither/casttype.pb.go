@@ -1363,7 +1363,7 @@ func encodeVarintPopulateCasttype(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *Castaway) Size() (n int) {
+func (m *Castaway) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Int32Ptr != nil {

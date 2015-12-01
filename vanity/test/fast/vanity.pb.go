@@ -54,7 +54,7 @@ func init() {
 	proto.RegisterType((*A)(nil), "vanity.A")
 }
 func (m *A) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -114,7 +114,7 @@ func encodeVarintVanity(data []byte, offset int, v uint64) int {
 	data[offset] = uint8(v)
 	return offset + 1
 }
-func (m *A) Size() (n int) {
+func (m *A) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Strings != nil {

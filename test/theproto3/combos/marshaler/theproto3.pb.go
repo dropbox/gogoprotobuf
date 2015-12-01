@@ -4610,7 +4610,7 @@ func extensionToGoStringTheproto3(e map[int32]github_com_gogo_protobuf_proto.Ext
 	return s
 }
 func (m *Message) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -4658,7 +4658,7 @@ func (m *Message) MarshalTo(data []byte) (int, error) {
 	if m.Nested != nil {
 		data[i] = 0x32
 		i++
-		i = encodeVarintTheproto3(data, i, uint64(m.Nested.Size()))
+		i = encodeVarintTheproto3(data, i, uint64(m.Nested.ProtoSize()))
 		n1, err := m.Nested.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -4693,7 +4693,7 @@ func (m *Message) MarshalTo(data []byte) (int, error) {
 			if v == nil {
 				return 0, errors.New("proto: map has nil element")
 			}
-			msgSize := v.Size()
+			msgSize := v.ProtoSize()
 			mapSize := 1 + sovTheproto3(uint64(k)) + 1 + msgSize + sovTheproto3(uint64(msgSize))
 			i = encodeVarintTheproto3(data, i, uint64(mapSize))
 			data[i] = 0x8
@@ -4701,7 +4701,7 @@ func (m *Message) MarshalTo(data []byte) (int, error) {
 			i = encodeVarintTheproto3(data, i, uint64(k))
 			data[i] = 0x12
 			i++
-			i = encodeVarintTheproto3(data, i, uint64(v.Size()))
+			i = encodeVarintTheproto3(data, i, uint64(v.ProtoSize()))
 			n2, err := v.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -4712,7 +4712,7 @@ func (m *Message) MarshalTo(data []byte) (int, error) {
 	if m.Proto2Field != nil {
 		data[i] = 0x5a
 		i++
-		i = encodeVarintTheproto3(data, i, uint64(m.Proto2Field.Size()))
+		i = encodeVarintTheproto3(data, i, uint64(m.Proto2Field.ProtoSize()))
 		n3, err := m.Proto2Field.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -4727,7 +4727,7 @@ func (m *Message) MarshalTo(data []byte) (int, error) {
 			if v == nil {
 				return 0, errors.New("proto: map has nil element")
 			}
-			msgSize := v.Size()
+			msgSize := v.ProtoSize()
 			mapSize := 1 + sovTheproto3(uint64(k)) + 1 + msgSize + sovTheproto3(uint64(msgSize))
 			i = encodeVarintTheproto3(data, i, uint64(mapSize))
 			data[i] = 0x8
@@ -4735,7 +4735,7 @@ func (m *Message) MarshalTo(data []byte) (int, error) {
 			i = encodeVarintTheproto3(data, i, uint64(k))
 			data[i] = 0x12
 			i++
-			i = encodeVarintTheproto3(data, i, uint64(v.Size()))
+			i = encodeVarintTheproto3(data, i, uint64(v.ProtoSize()))
 			n4, err := v.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -4747,7 +4747,7 @@ func (m *Message) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *Nested) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -4771,7 +4771,7 @@ func (m *Nested) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *AllMaps) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -5054,7 +5054,7 @@ func (m *AllMaps) MarshalTo(data []byte) (int, error) {
 			if v == nil {
 				return 0, errors.New("proto: map has nil element")
 			}
-			msgSize := v.Size()
+			msgSize := v.ProtoSize()
 			mapSize := 1 + len(k) + sovTheproto3(uint64(len(k))) + 1 + msgSize + sovTheproto3(uint64(msgSize))
 			i = encodeVarintTheproto3(data, i, uint64(mapSize))
 			data[i] = 0xa
@@ -5063,7 +5063,7 @@ func (m *AllMaps) MarshalTo(data []byte) (int, error) {
 			i += copy(data[i:], k)
 			data[i] = 0x12
 			i++
-			i = encodeVarintTheproto3(data, i, uint64(v.Size()))
+			i = encodeVarintTheproto3(data, i, uint64(v.ProtoSize()))
 			n5, err := v.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -5075,7 +5075,7 @@ func (m *AllMaps) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *MessageWithMap) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -5113,7 +5113,7 @@ func (m *MessageWithMap) MarshalTo(data []byte) (int, error) {
 			if v == nil {
 				return 0, errors.New("proto: map has nil element")
 			}
-			msgSize := v.Size()
+			msgSize := v.ProtoSize()
 			mapSize := 1 + sozTheproto3(uint64(k)) + 1 + msgSize + sovTheproto3(uint64(msgSize))
 			i = encodeVarintTheproto3(data, i, uint64(mapSize))
 			data[i] = 0x8
@@ -5121,7 +5121,7 @@ func (m *MessageWithMap) MarshalTo(data []byte) (int, error) {
 			i = encodeVarintTheproto3(data, i, uint64((uint64(k)<<1)^uint64((k>>63))))
 			data[i] = 0x12
 			i++
-			i = encodeVarintTheproto3(data, i, uint64(v.Size()))
+			i = encodeVarintTheproto3(data, i, uint64(v.ProtoSize()))
 			n6, err := v.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -5154,7 +5154,7 @@ func (m *MessageWithMap) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *FloatingPoint) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -5544,7 +5544,7 @@ func encodeVarintPopulateTheproto3(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *Message) Size() (n int) {
+func (m *Message) ProtoSize() (n int) {
 	var l int
 	_ = l
 	l = len(m.Name)
@@ -5569,7 +5569,7 @@ func (m *Message) Size() (n int) {
 		}
 	}
 	if m.Nested != nil {
-		l = m.Nested.Size()
+		l = m.Nested.ProtoSize()
 		n += 1 + l + sovTheproto3(uint64(l))
 	}
 	if m.ResultCount != 0 {
@@ -5587,14 +5587,14 @@ func (m *Message) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + sovTheproto3(uint64(k)) + 1 + l + sovTheproto3(uint64(l))
 			n += mapEntrySize + 1 + sovTheproto3(uint64(mapEntrySize))
 		}
 	}
 	if m.Proto2Field != nil {
-		l = m.Proto2Field.Size()
+		l = m.Proto2Field.ProtoSize()
 		n += 1 + l + sovTheproto3(uint64(l))
 	}
 	if len(m.Proto2Value) > 0 {
@@ -5603,7 +5603,7 @@ func (m *Message) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + sovTheproto3(uint64(k)) + 1 + l + sovTheproto3(uint64(l))
 			n += mapEntrySize + 1 + sovTheproto3(uint64(mapEntrySize))
@@ -5612,7 +5612,7 @@ func (m *Message) Size() (n int) {
 	return n
 }
 
-func (m *Nested) Size() (n int) {
+func (m *Nested) ProtoSize() (n int) {
 	var l int
 	_ = l
 	l = len(m.Bunny)
@@ -5622,7 +5622,7 @@ func (m *Nested) Size() (n int) {
 	return n
 }
 
-func (m *AllMaps) Size() (n int) {
+func (m *AllMaps) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.StringToDoubleMap) > 0 {
@@ -5759,7 +5759,7 @@ func (m *AllMaps) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + len(k) + sovTheproto3(uint64(len(k))) + 1 + l + sovTheproto3(uint64(l))
 			n += mapEntrySize + 2 + sovTheproto3(uint64(mapEntrySize))
@@ -5768,7 +5768,7 @@ func (m *AllMaps) Size() (n int) {
 	return n
 }
 
-func (m *MessageWithMap) Size() (n int) {
+func (m *MessageWithMap) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.NameMapping) > 0 {
@@ -5785,7 +5785,7 @@ func (m *MessageWithMap) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + sozTheproto3(uint64(k)) + 1 + l + sovTheproto3(uint64(l))
 			n += mapEntrySize + 1 + sovTheproto3(uint64(mapEntrySize))
@@ -5802,7 +5802,7 @@ func (m *MessageWithMap) Size() (n int) {
 	return n
 }
 
-func (m *FloatingPoint) Size() (n int) {
+func (m *FloatingPoint) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.F != 0 {

@@ -53,5 +53,5 @@ type ReadCloser interface {
 
 type marshaler interface {
 	MarshalTo(data []byte) (n int, err error)
-	Size() (n int)
+	ProtoSize() (n int)
 }

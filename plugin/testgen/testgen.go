@@ -341,7 +341,7 @@ func (p *testProto) Generate(imports generator.PluginImports, file *generator.Fi
 				p.P(`seed := `, timePkg.Use(), `.Now().UnixNano()`)
 				p.P(`popr := `, randPkg.Use(), `.New(`, randPkg.Use(), `.NewSource(seed))`)
 				p.P(`p := NewPopulated`, ccTypeName, `(popr, false)`)
-				p.P(`size := p.Size()`)
+				p.P(`size := p.ProtoSize()`)
 				p.P(`data := make([]byte, size)`)
 				p.P(`for i := range data {`)
 				p.In()

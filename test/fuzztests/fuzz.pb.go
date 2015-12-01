@@ -564,7 +564,7 @@ func extensionToGoStringFuzz(e map[int32]github_com_gogo_protobuf_proto.Extensio
 	return s
 }
 func (m *Nil) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -585,7 +585,7 @@ func (m *Nil) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinRepPackedNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -841,7 +841,7 @@ func (m *NinRepPackedNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -944,7 +944,7 @@ func (m *NinOptNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -971,7 +971,7 @@ func (m *NinOptStruct) MarshalTo(data []byte) (int, error) {
 	if m.Field3 != nil {
 		data[i] = 0x1a
 		i++
-		i = encodeVarintFuzz(data, i, uint64(m.Field3.Size()))
+		i = encodeVarintFuzz(data, i, uint64(m.Field3.ProtoSize()))
 		n17, err := m.Field3.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -981,7 +981,7 @@ func (m *NinOptStruct) MarshalTo(data []byte) (int, error) {
 	if m.Field4 != nil {
 		data[i] = 0x22
 		i++
-		i = encodeVarintFuzz(data, i, uint64(m.Field4.Size()))
+		i = encodeVarintFuzz(data, i, uint64(m.Field4.ProtoSize()))
 		n18, err := m.Field4.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -1001,7 +1001,7 @@ func (m *NinOptStruct) MarshalTo(data []byte) (int, error) {
 	if m.Field8 != nil {
 		data[i] = 0x42
 		i++
-		i = encodeVarintFuzz(data, i, uint64(m.Field8.Size()))
+		i = encodeVarintFuzz(data, i, uint64(m.Field8.ProtoSize()))
 		n19, err := m.Field8.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -1063,7 +1063,7 @@ func encodeVarintFuzz(data []byte, offset int, v uint64) int {
 	data[offset] = uint8(v)
 	return offset + 1
 }
-func (m *Nil) Size() (n int) {
+func (m *Nil) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.XXX_unrecognized != nil {
@@ -1072,7 +1072,7 @@ func (m *Nil) Size() (n int) {
 	return n
 }
 
-func (m *NinRepPackedNative) Size() (n int) {
+func (m *NinRepPackedNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -1144,7 +1144,7 @@ func (m *NinRepPackedNative) Size() (n int) {
 	return n
 }
 
-func (m *NinOptNative) Size() (n int) {
+func (m *NinOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -1200,7 +1200,7 @@ func (m *NinOptNative) Size() (n int) {
 	return n
 }
 
-func (m *NinOptStruct) Size() (n int) {
+func (m *NinOptStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -1210,11 +1210,11 @@ func (m *NinOptStruct) Size() (n int) {
 		n += 5
 	}
 	if m.Field3 != nil {
-		l = m.Field3.Size()
+		l = m.Field3.ProtoSize()
 		n += 1 + l + sovFuzz(uint64(l))
 	}
 	if m.Field4 != nil {
-		l = m.Field4.Size()
+		l = m.Field4.ProtoSize()
 		n += 1 + l + sovFuzz(uint64(l))
 	}
 	if m.Field6 != nil {
@@ -1224,7 +1224,7 @@ func (m *NinOptStruct) Size() (n int) {
 		n += 1 + sozFuzz(uint64(*m.Field7))
 	}
 	if m.Field8 != nil {
-		l = m.Field8.Size()
+		l = m.Field8.ProtoSize()
 		n += 1 + l + sovFuzz(uint64(l))
 	}
 	if m.Field13 != nil {

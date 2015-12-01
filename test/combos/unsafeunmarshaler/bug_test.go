@@ -52,7 +52,7 @@ func TestBugZeroLengthSliceSize(t *testing.T) {
 	n := &NinRepPackedNative{
 		Field8: []int64{},
 	}
-	size := n.Size()
+	size := n.ProtoSize()
 	data, err := proto.Marshal(n)
 	if err != nil {
 		panic(err)
@@ -83,23 +83,23 @@ func TestBugPackedProtoSize(t *testing.T) {
 
 func testSize(m interface {
 	proto.Message
-	Size() int
+	ProtoSize() int
 }, desc string, expected int) ([]byte, error) {
 	data, err := proto.Marshal(m)
 	if err != nil {
 		return nil, err
 	}
 	protoSize := proto.Size(m)
-	mSize := m.Size()
+	mSize := m.ProtoSize()
 	lenData := len(data)
 	if protoSize != mSize || protoSize != lenData || mSize != lenData {
-		return nil, fmt.Errorf("%s proto.Size(m){%d} != m.Size(){%d} != len(data){%d}", desc, protoSize, mSize, lenData)
+		return nil, fmt.Errorf("%s proto.Size(m){%d} != m.ProtoSize(){%d} != len(data){%d}", desc, protoSize, mSize, lenData)
 	}
 	if got := protoSize; got != expected {
 		return nil, fmt.Errorf("%s proto.Size(m) got %d expected %d", desc, got, expected)
 	}
 	if got := mSize; got != expected {
-		return nil, fmt.Errorf("%s m.Size() got %d expected %d", desc, got, expected)
+		return nil, fmt.Errorf("%s m.ProtoSize() got %d expected %d", desc, got, expected)
 	}
 	if got := lenData; got != expected {
 		return nil, fmt.Errorf("%s len(data) got %d expected %d", desc, got, expected)

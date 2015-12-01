@@ -45,7 +45,7 @@ func NewRequiredNotSetError(field string) *RequiredNotSetError {
 }
 
 type Sizer interface {
-	Size() int
+	ProtoSize() int
 }
 
 func (o *Buffer) enc_ext_slice_byte(p *Properties, base structPointer) error {

@@ -341,7 +341,7 @@ func init() {
 	proto.RegisterType((*NestedNinOptNative)(nil), "required.NestedNinOptNative")
 }
 func (m *RequiredExample) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -391,7 +391,7 @@ func (m *RequiredExample) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidOptNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -466,7 +466,7 @@ func (m *NidOptNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -599,7 +599,7 @@ func (m *NinOptNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NestedNinOptNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -617,7 +617,7 @@ func (m *NestedNinOptNative) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.NestedNinOpts {
 			data[i] = 0xa
 			i++
-			i = encodeVarintRequiredexample(data, i, uint64(msg.Size()))
+			i = encodeVarintRequiredexample(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -882,7 +882,7 @@ func encodeVarintPopulateRequiredexample(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *RequiredExample) Size() (n int) {
+func (m *RequiredExample) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.TheRequiredString != nil {
@@ -905,7 +905,7 @@ func (m *RequiredExample) Size() (n int) {
 	return n
 }
 
-func (m *NidOptNative) Size() (n int) {
+func (m *NidOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
@@ -933,7 +933,7 @@ func (m *NidOptNative) Size() (n int) {
 	return n
 }
 
-func (m *NinOptNative) Size() (n int) {
+func (m *NinOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -989,12 +989,12 @@ func (m *NinOptNative) Size() (n int) {
 	return n
 }
 
-func (m *NestedNinOptNative) Size() (n int) {
+func (m *NestedNinOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.NestedNinOpts) > 0 {
 		for _, e := range m.NestedNinOpts {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovRequiredexample(uint64(l))
 		}
 	}

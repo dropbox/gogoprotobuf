@@ -74,7 +74,7 @@ message B {
 given to the marshalto plugin, will generate the following code:
 
   func (m *B) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -90,7 +90,7 @@ given to the marshalto plugin, will generate the following code:
 	_ = l
 	data[i] = 0xa
 	i++
-	i = encodeVarintExample(data, i, uint64(m.A.Size()))
+	i = encodeVarintExample(data, i, uint64(m.A.ProtoSize()))
 	n2, err := m.A.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -100,7 +100,7 @@ given to the marshalto plugin, will generate the following code:
 		for _, msg := range m.G {
 			data[i] = 0x12
 			i++
-			i = encodeVarintExample(data, i, uint64(msg.Size()))
+			i = encodeVarintExample(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -341,7 +341,7 @@ func (p *marshalto) mapField(numGen NumGen, fieldTyp descriptor.FieldDescriptorP
 	case descriptor.FieldDescriptorProto_TYPE_SINT64:
 		p.callVarint(`(uint64(`, varName, `) << 1) ^ uint64((`, varName, ` >> 63))`)
 	case descriptor.FieldDescriptorProto_TYPE_MESSAGE:
-		p.callVarint(varName, `.Size()`)
+		p.callVarint(varName, `.ProtoSize()`)
 		p.P(`n`, numGen.Next(), `, err := `, varName, `.MarshalTo(data[i:])`)
 		p.P(`if err != nil {`)
 		p.In()
@@ -882,7 +882,7 @@ func (p *marshalto) generateField(proto3 bool, numGen NumGen, file *generator.Fi
 				p.P(`return 0, `, p.errorsPkg.Use(), `.New("proto: map has nil element")`)
 				p.Out()
 				p.P(`}`)
-				p.P(`msgSize := v.Size()`)
+				p.P(`msgSize := v.ProtoSize()`)
 				sum = append(sum, `msgSize + sov`+p.localName+`(uint64(msgSize))`)
 			}
 			p.P(`mapSize := `, strings.Join(sum, " + "))
@@ -897,7 +897,7 @@ func (p *marshalto) generateField(proto3 bool, numGen NumGen, file *generator.Fi
 			p.P(`for _, msg := range m.`, fieldname, ` {`)
 			p.In()
 			p.encodeKey(fieldNumber, wireType)
-			p.callVarint("msg.Size()")
+			p.callVarint("msg.ProtoSize()")
 			p.P(`n, err := msg.MarshalTo(data[i:])`)
 			p.P(`if err != nil {`)
 			p.In()
@@ -909,7 +909,7 @@ func (p *marshalto) generateField(proto3 bool, numGen NumGen, file *generator.Fi
 			p.P(`}`)
 		} else {
 			p.encodeKey(fieldNumber, wireType)
-			p.callVarint(`m.`, fieldname, `.Size()`)
+			p.callVarint(`m.`, fieldname, `.ProtoSize()`)
 			p.P(`n`, numGen.Next(), `, err := m.`, fieldname, `.MarshalTo(data[i:])`)
 			p.P(`if err != nil {`)
 			p.In()
@@ -946,7 +946,7 @@ func (p *marshalto) generateField(proto3 bool, numGen NumGen, file *generator.Fi
 				p.P(`for _, msg := range m.`, fieldname, ` {`)
 				p.In()
 				p.encodeKey(fieldNumber, wireType)
-				p.callVarint(`msg.Size()`)
+				p.callVarint(`msg.ProtoSize()`)
 				p.P(`n, err := msg.MarshalTo(data[i:])`)
 				p.P(`if err != nil {`)
 				p.In()
@@ -958,7 +958,7 @@ func (p *marshalto) generateField(proto3 bool, numGen NumGen, file *generator.Fi
 				p.P(`}`)
 			} else {
 				p.encodeKey(fieldNumber, wireType)
-				p.callVarint(`m.`, fieldname, `.Size()`)
+				p.callVarint(`m.`, fieldname, `.ProtoSize()`)
 				p.P(`n`, numGen.Next(), `, err := m.`, fieldname, `.MarshalTo(data[i:])`)
 				p.P(`if err != nil {`)
 				p.In()
@@ -1112,7 +1112,7 @@ func (p *marshalto) Generate(file *generator.FileDescriptor) {
 
 		p.P(`func (m *`, ccTypeName, `) Marshal() (data []byte, err error) {`)
 		p.In()
-		p.P(`size := m.Size()`)
+		p.P(`size := m.ProtoSize()`)
 		p.P(`data = make([]byte, size)`)
 		p.P(`n, err := m.MarshalTo(data)`)
 		p.P(`if err != nil {`)

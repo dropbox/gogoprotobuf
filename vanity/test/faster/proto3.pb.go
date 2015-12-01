@@ -36,7 +36,7 @@ func init() {
 	proto.RegisterType((*Aproto3)(nil), "vanity.Aproto3")
 }
 func (m *Aproto3) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -86,7 +86,7 @@ func encodeVarintProto3(data []byte, offset int, v uint64) int {
 	data[offset] = uint8(v)
 	return offset + 1
 }
-func (m *Aproto3) Size() (n int) {
+func (m *Aproto3) ProtoSize() (n int) {
 	var l int
 	_ = l
 	l = len(m.B)

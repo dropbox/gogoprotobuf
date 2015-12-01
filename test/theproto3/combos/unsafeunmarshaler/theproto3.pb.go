@@ -4951,7 +4951,7 @@ func encodeVarintPopulateTheproto3(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *Message) Size() (n int) {
+func (m *Message) ProtoSize() (n int) {
 	var l int
 	_ = l
 	l = len(m.Name)
@@ -4985,7 +4985,7 @@ func (m *Message) Size() (n int) {
 		}
 	}
 	if m.Nested != nil {
-		l = m.Nested.Size()
+		l = m.Nested.ProtoSize()
 		n += 1 + l + sovTheproto3(uint64(l))
 	}
 	if len(m.Terrain) > 0 {
@@ -4994,14 +4994,14 @@ func (m *Message) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + sovTheproto3(uint64(k)) + 1 + l + sovTheproto3(uint64(l))
 			n += mapEntrySize + 1 + sovTheproto3(uint64(mapEntrySize))
 		}
 	}
 	if m.Proto2Field != nil {
-		l = m.Proto2Field.Size()
+		l = m.Proto2Field.ProtoSize()
 		n += 1 + l + sovTheproto3(uint64(l))
 	}
 	if len(m.Proto2Value) > 0 {
@@ -5010,7 +5010,7 @@ func (m *Message) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + sovTheproto3(uint64(k)) + 1 + l + sovTheproto3(uint64(l))
 			n += mapEntrySize + 1 + sovTheproto3(uint64(mapEntrySize))
@@ -5019,7 +5019,7 @@ func (m *Message) Size() (n int) {
 	return n
 }
 
-func (m *Nested) Size() (n int) {
+func (m *Nested) ProtoSize() (n int) {
 	var l int
 	_ = l
 	l = len(m.Bunny)
@@ -5029,7 +5029,7 @@ func (m *Nested) Size() (n int) {
 	return n
 }
 
-func (m *AllMaps) Size() (n int) {
+func (m *AllMaps) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.StringToDoubleMap) > 0 {
@@ -5166,7 +5166,7 @@ func (m *AllMaps) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + len(k) + sovTheproto3(uint64(len(k))) + 1 + l + sovTheproto3(uint64(l))
 			n += mapEntrySize + 2 + sovTheproto3(uint64(mapEntrySize))
@@ -5175,7 +5175,7 @@ func (m *AllMaps) Size() (n int) {
 	return n
 }
 
-func (m *MessageWithMap) Size() (n int) {
+func (m *MessageWithMap) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.NameMapping) > 0 {
@@ -5192,7 +5192,7 @@ func (m *MessageWithMap) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + sozTheproto3(uint64(k)) + 1 + l + sovTheproto3(uint64(l))
 			n += mapEntrySize + 1 + sovTheproto3(uint64(mapEntrySize))
@@ -5209,7 +5209,7 @@ func (m *MessageWithMap) Size() (n int) {
 	return n
 }
 
-func (m *FloatingPoint) Size() (n int) {
+func (m *FloatingPoint) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.F != 0 {

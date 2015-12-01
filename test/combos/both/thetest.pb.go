@@ -15191,7 +15191,7 @@ func extensionToGoStringThetest(e map[int32]github_com_gogo_protobuf_proto.Exten
 	return s
 }
 func (m *NidOptNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -15266,7 +15266,7 @@ func (m *NidOptNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -15369,7 +15369,7 @@ func (m *NinOptNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidRepNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -15591,7 +15591,7 @@ func (m *NidRepNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinRepNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -15813,7 +15813,7 @@ func (m *NinRepNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidRepPackedNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16069,7 +16069,7 @@ func (m *NidRepPackedNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinRepPackedNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16325,7 +16325,7 @@ func (m *NinRepPackedNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidOptStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16347,7 +16347,7 @@ func (m *NidOptStruct) MarshalTo(data []byte) (int, error) {
 	i = encodeFixed32Thetest(data, i, uint32(math.Float32bits(m.Field2)))
 	data[i] = 0x1a
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Field3.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Field3.ProtoSize()))
 	n41, err := m.Field3.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -16355,7 +16355,7 @@ func (m *NidOptStruct) MarshalTo(data []byte) (int, error) {
 	i += n41
 	data[i] = 0x22
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Field4.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Field4.ProtoSize()))
 	n42, err := m.Field4.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -16369,7 +16369,7 @@ func (m *NidOptStruct) MarshalTo(data []byte) (int, error) {
 	i = encodeVarintThetest(data, i, uint64((uint32(m.Field7)<<1)^uint32((m.Field7>>31))))
 	data[i] = 0x42
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Field8.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Field8.ProtoSize()))
 	n43, err := m.Field8.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -16400,7 +16400,7 @@ func (m *NidOptStruct) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16427,7 +16427,7 @@ func (m *NinOptStruct) MarshalTo(data []byte) (int, error) {
 	if m.Field3 != nil {
 		data[i] = 0x1a
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field3.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field3.ProtoSize()))
 		n44, err := m.Field3.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -16437,7 +16437,7 @@ func (m *NinOptStruct) MarshalTo(data []byte) (int, error) {
 	if m.Field4 != nil {
 		data[i] = 0x22
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field4.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field4.ProtoSize()))
 		n45, err := m.Field4.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -16457,7 +16457,7 @@ func (m *NinOptStruct) MarshalTo(data []byte) (int, error) {
 	if m.Field8 != nil {
 		data[i] = 0x42
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field8.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field8.ProtoSize()))
 		n46, err := m.Field8.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -16493,7 +16493,7 @@ func (m *NinOptStruct) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidRepStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16549,7 +16549,7 @@ func (m *NidRepStruct) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Field3 {
 			data[i] = 0x1a
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -16561,7 +16561,7 @@ func (m *NidRepStruct) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Field4 {
 			data[i] = 0x22
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -16594,7 +16594,7 @@ func (m *NidRepStruct) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Field8 {
 			data[i] = 0x42
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -16644,7 +16644,7 @@ func (m *NidRepStruct) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinRepStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16700,7 +16700,7 @@ func (m *NinRepStruct) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Field3 {
 			data[i] = 0x1a
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -16712,7 +16712,7 @@ func (m *NinRepStruct) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Field4 {
 			data[i] = 0x22
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -16745,7 +16745,7 @@ func (m *NinRepStruct) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Field8 {
 			data[i] = 0x42
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -16795,7 +16795,7 @@ func (m *NinRepStruct) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidEmbeddedStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16812,7 +16812,7 @@ func (m *NidEmbeddedStruct) MarshalTo(data []byte) (int, error) {
 	if m.NidOptNative != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.NidOptNative.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.NidOptNative.ProtoSize()))
 		n53, err := m.NidOptNative.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -16823,7 +16823,7 @@ func (m *NidEmbeddedStruct) MarshalTo(data []byte) (int, error) {
 	i++
 	data[i] = 0xc
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Field200.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Field200.ProtoSize()))
 	n54, err := m.Field200.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -16846,7 +16846,7 @@ func (m *NidEmbeddedStruct) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinEmbeddedStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16863,7 +16863,7 @@ func (m *NinEmbeddedStruct) MarshalTo(data []byte) (int, error) {
 	if m.NidOptNative != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.NidOptNative.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.NidOptNative.ProtoSize()))
 		n55, err := m.NidOptNative.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -16875,7 +16875,7 @@ func (m *NinEmbeddedStruct) MarshalTo(data []byte) (int, error) {
 		i++
 		data[i] = 0xc
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field200.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field200.ProtoSize()))
 		n56, err := m.Field200.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -16901,7 +16901,7 @@ func (m *NinEmbeddedStruct) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidNestedStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16917,7 +16917,7 @@ func (m *NidNestedStruct) MarshalTo(data []byte) (int, error) {
 	_ = l
 	data[i] = 0xa
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Field1.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Field1.ProtoSize()))
 	n57, err := m.Field1.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -16927,7 +16927,7 @@ func (m *NidNestedStruct) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Field2 {
 			data[i] = 0x12
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -16942,7 +16942,7 @@ func (m *NidNestedStruct) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinNestedStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -16959,7 +16959,7 @@ func (m *NinNestedStruct) MarshalTo(data []byte) (int, error) {
 	if m.Field1 != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field1.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field1.ProtoSize()))
 		n58, err := m.Field1.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -16970,7 +16970,7 @@ func (m *NinNestedStruct) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Field2 {
 			data[i] = 0x12
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -16985,7 +16985,7 @@ func (m *NinNestedStruct) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidOptCustom) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17001,7 +17001,7 @@ func (m *NidOptCustom) MarshalTo(data []byte) (int, error) {
 	_ = l
 	data[i] = 0xa
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Id.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Id.ProtoSize()))
 	n59, err := m.Id.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17009,7 +17009,7 @@ func (m *NidOptCustom) MarshalTo(data []byte) (int, error) {
 	i += n59
 	data[i] = 0x12
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Value.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Value.ProtoSize()))
 	n60, err := m.Value.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17022,7 +17022,7 @@ func (m *NidOptCustom) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *CustomDash) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17039,7 +17039,7 @@ func (m *CustomDash) MarshalTo(data []byte) (int, error) {
 	if m.Value != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Value.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Value.ProtoSize()))
 		n61, err := m.Value.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17053,7 +17053,7 @@ func (m *CustomDash) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptCustom) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17070,7 +17070,7 @@ func (m *NinOptCustom) MarshalTo(data []byte) (int, error) {
 	if m.Id != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Id.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Id.ProtoSize()))
 		n62, err := m.Id.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17080,7 +17080,7 @@ func (m *NinOptCustom) MarshalTo(data []byte) (int, error) {
 	if m.Value != nil {
 		data[i] = 0x12
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Value.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Value.ProtoSize()))
 		n63, err := m.Value.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17094,7 +17094,7 @@ func (m *NinOptCustom) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidRepCustom) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17112,7 +17112,7 @@ func (m *NidRepCustom) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Id {
 			data[i] = 0xa
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -17124,7 +17124,7 @@ func (m *NidRepCustom) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Value {
 			data[i] = 0x12
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -17139,7 +17139,7 @@ func (m *NidRepCustom) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinRepCustom) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17157,7 +17157,7 @@ func (m *NinRepCustom) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Id {
 			data[i] = 0xa
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -17169,7 +17169,7 @@ func (m *NinRepCustom) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Value {
 			data[i] = 0x12
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -17184,7 +17184,7 @@ func (m *NinRepCustom) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptNativeUnion) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17257,7 +17257,7 @@ func (m *NinOptNativeUnion) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptStructUnion) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17284,7 +17284,7 @@ func (m *NinOptStructUnion) MarshalTo(data []byte) (int, error) {
 	if m.Field3 != nil {
 		data[i] = 0x1a
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field3.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field3.ProtoSize()))
 		n64, err := m.Field3.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17294,7 +17294,7 @@ func (m *NinOptStructUnion) MarshalTo(data []byte) (int, error) {
 	if m.Field4 != nil {
 		data[i] = 0x22
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field4.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field4.ProtoSize()))
 		n65, err := m.Field4.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17340,7 +17340,7 @@ func (m *NinOptStructUnion) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinEmbeddedStructUnion) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17357,7 +17357,7 @@ func (m *NinEmbeddedStructUnion) MarshalTo(data []byte) (int, error) {
 	if m.NidOptNative != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.NidOptNative.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.NidOptNative.ProtoSize()))
 		n66, err := m.NidOptNative.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17369,7 +17369,7 @@ func (m *NinEmbeddedStructUnion) MarshalTo(data []byte) (int, error) {
 		i++
 		data[i] = 0xc
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field200.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field200.ProtoSize()))
 		n67, err := m.Field200.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17395,7 +17395,7 @@ func (m *NinEmbeddedStructUnion) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinNestedStructUnion) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17412,7 +17412,7 @@ func (m *NinNestedStructUnion) MarshalTo(data []byte) (int, error) {
 	if m.Field1 != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field1.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field1.ProtoSize()))
 		n68, err := m.Field1.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17422,7 +17422,7 @@ func (m *NinNestedStructUnion) MarshalTo(data []byte) (int, error) {
 	if m.Field2 != nil {
 		data[i] = 0x12
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field2.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field2.ProtoSize()))
 		n69, err := m.Field2.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17432,7 +17432,7 @@ func (m *NinNestedStructUnion) MarshalTo(data []byte) (int, error) {
 	if m.Field3 != nil {
 		data[i] = 0x1a
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Field3.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Field3.ProtoSize()))
 		n70, err := m.Field3.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17446,7 +17446,7 @@ func (m *NinNestedStructUnion) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *Tree) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17463,7 +17463,7 @@ func (m *Tree) MarshalTo(data []byte) (int, error) {
 	if m.Or != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Or.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Or.ProtoSize()))
 		n71, err := m.Or.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17473,7 +17473,7 @@ func (m *Tree) MarshalTo(data []byte) (int, error) {
 	if m.And != nil {
 		data[i] = 0x12
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.And.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.And.ProtoSize()))
 		n72, err := m.And.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17483,7 +17483,7 @@ func (m *Tree) MarshalTo(data []byte) (int, error) {
 	if m.Leaf != nil {
 		data[i] = 0x1a
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Leaf.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Leaf.ProtoSize()))
 		n73, err := m.Leaf.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17497,7 +17497,7 @@ func (m *Tree) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *OrBranch) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17513,7 +17513,7 @@ func (m *OrBranch) MarshalTo(data []byte) (int, error) {
 	_ = l
 	data[i] = 0xa
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Left.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Left.ProtoSize()))
 	n74, err := m.Left.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17521,7 +17521,7 @@ func (m *OrBranch) MarshalTo(data []byte) (int, error) {
 	i += n74
 	data[i] = 0x12
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Right.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Right.ProtoSize()))
 	n75, err := m.Right.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17534,7 +17534,7 @@ func (m *OrBranch) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *AndBranch) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17550,7 +17550,7 @@ func (m *AndBranch) MarshalTo(data []byte) (int, error) {
 	_ = l
 	data[i] = 0xa
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Left.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Left.ProtoSize()))
 	n76, err := m.Left.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17558,7 +17558,7 @@ func (m *AndBranch) MarshalTo(data []byte) (int, error) {
 	i += n76
 	data[i] = 0x12
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Right.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Right.ProtoSize()))
 	n77, err := m.Right.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17571,7 +17571,7 @@ func (m *AndBranch) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *Leaf) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17599,7 +17599,7 @@ func (m *Leaf) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *DeepTree) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17616,7 +17616,7 @@ func (m *DeepTree) MarshalTo(data []byte) (int, error) {
 	if m.Down != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Down.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Down.ProtoSize()))
 		n78, err := m.Down.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17626,7 +17626,7 @@ func (m *DeepTree) MarshalTo(data []byte) (int, error) {
 	if m.And != nil {
 		data[i] = 0x12
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.And.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.And.ProtoSize()))
 		n79, err := m.And.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17636,7 +17636,7 @@ func (m *DeepTree) MarshalTo(data []byte) (int, error) {
 	if m.Leaf != nil {
 		data[i] = 0x1a
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.Leaf.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.Leaf.ProtoSize()))
 		n80, err := m.Leaf.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -17650,7 +17650,7 @@ func (m *DeepTree) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *ADeepBranch) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17666,7 +17666,7 @@ func (m *ADeepBranch) MarshalTo(data []byte) (int, error) {
 	_ = l
 	data[i] = 0x12
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Down.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Down.ProtoSize()))
 	n81, err := m.Down.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17679,7 +17679,7 @@ func (m *ADeepBranch) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *AndDeepBranch) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17695,7 +17695,7 @@ func (m *AndDeepBranch) MarshalTo(data []byte) (int, error) {
 	_ = l
 	data[i] = 0xa
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Left.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Left.ProtoSize()))
 	n82, err := m.Left.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17703,7 +17703,7 @@ func (m *AndDeepBranch) MarshalTo(data []byte) (int, error) {
 	i += n82
 	data[i] = 0x12
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Right.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Right.ProtoSize()))
 	n83, err := m.Right.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17716,7 +17716,7 @@ func (m *AndDeepBranch) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *DeepLeaf) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17732,7 +17732,7 @@ func (m *DeepLeaf) MarshalTo(data []byte) (int, error) {
 	_ = l
 	data[i] = 0xa
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.Tree.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.Tree.ProtoSize()))
 	n84, err := m.Tree.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -17745,7 +17745,7 @@ func (m *DeepLeaf) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *Nil) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17766,7 +17766,7 @@ func (m *Nil) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidOptEnum) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17790,7 +17790,7 @@ func (m *NidOptEnum) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptEnum) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17816,7 +17816,7 @@ func (m *NinOptEnum) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NidRepEnum) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17844,7 +17844,7 @@ func (m *NidRepEnum) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinRepEnum) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17872,7 +17872,7 @@ func (m *NinRepEnum) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptEnumDefault) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17898,7 +17898,7 @@ func (m *NinOptEnumDefault) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *AnotherNinOptEnum) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17924,7 +17924,7 @@ func (m *AnotherNinOptEnum) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *AnotherNinOptEnumDefault) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17950,7 +17950,7 @@ func (m *AnotherNinOptEnumDefault) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *Timer) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -17983,7 +17983,7 @@ func (m *Timer) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *MyExtendable) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18016,7 +18016,7 @@ func (m *MyExtendable) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *OtherExtenable) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18033,7 +18033,7 @@ func (m *OtherExtenable) MarshalTo(data []byte) (int, error) {
 	if m.M != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.M.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.M.ProtoSize()))
 		n85, err := m.M.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18064,7 +18064,7 @@ func (m *OtherExtenable) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NestedDefinition) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18091,7 +18091,7 @@ func (m *NestedDefinition) MarshalTo(data []byte) (int, error) {
 	if m.NNM != nil {
 		data[i] = 0x1a
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.NNM.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.NNM.ProtoSize()))
 		n86, err := m.NNM.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18101,7 +18101,7 @@ func (m *NestedDefinition) MarshalTo(data []byte) (int, error) {
 	if m.NM != nil {
 		data[i] = 0x22
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.NM.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.NM.ProtoSize()))
 		n87, err := m.NM.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18115,7 +18115,7 @@ func (m *NestedDefinition) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NestedDefinition_NestedMessage) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18137,7 +18137,7 @@ func (m *NestedDefinition_NestedMessage) MarshalTo(data []byte) (int, error) {
 	if m.NNM != nil {
 		data[i] = 0x12
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.NNM.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.NNM.ProtoSize()))
 		n88, err := m.NNM.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18151,7 +18151,7 @@ func (m *NestedDefinition_NestedMessage) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NestedDefinition_NestedMessage_NestedNestedMsg) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18178,7 +18178,7 @@ func (m *NestedDefinition_NestedMessage_NestedNestedMsg) MarshalTo(data []byte) 
 }
 
 func (m *NestedScope) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18195,7 +18195,7 @@ func (m *NestedScope) MarshalTo(data []byte) (int, error) {
 	if m.A != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.A.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.A.ProtoSize()))
 		n89, err := m.A.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18210,7 +18210,7 @@ func (m *NestedScope) MarshalTo(data []byte) (int, error) {
 	if m.C != nil {
 		data[i] = 0x1a
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.C.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.C.ProtoSize()))
 		n90, err := m.C.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18224,7 +18224,7 @@ func (m *NestedScope) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NinOptNativeDefault) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18327,7 +18327,7 @@ func (m *NinOptNativeDefault) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *CustomContainer) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18343,7 +18343,7 @@ func (m *CustomContainer) MarshalTo(data []byte) (int, error) {
 	_ = l
 	data[i] = 0xa
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.CustomStruct.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.CustomStruct.ProtoSize()))
 	n91, err := m.CustomStruct.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -18356,7 +18356,7 @@ func (m *CustomContainer) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *CustomNameNidOptNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18431,7 +18431,7 @@ func (m *CustomNameNidOptNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *CustomNameNinOptNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18534,7 +18534,7 @@ func (m *CustomNameNinOptNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *CustomNameNinRepNative) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18756,7 +18756,7 @@ func (m *CustomNameNinRepNative) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *CustomNameNinStruct) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18783,7 +18783,7 @@ func (m *CustomNameNinStruct) MarshalTo(data []byte) (int, error) {
 	if m.FieldC != nil {
 		data[i] = 0x1a
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.FieldC.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.FieldC.ProtoSize()))
 		n96, err := m.FieldC.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18794,7 +18794,7 @@ func (m *CustomNameNinStruct) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.FieldD {
 			data[i] = 0x22
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -18815,7 +18815,7 @@ func (m *CustomNameNinStruct) MarshalTo(data []byte) (int, error) {
 	if m.FieldG != nil {
 		data[i] = 0x42
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.FieldG.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.FieldG.ProtoSize()))
 		n97, err := m.FieldG.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18851,7 +18851,7 @@ func (m *CustomNameNinStruct) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *CustomNameCustomType) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18868,7 +18868,7 @@ func (m *CustomNameCustomType) MarshalTo(data []byte) (int, error) {
 	if m.FieldA != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.FieldA.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.FieldA.ProtoSize()))
 		n98, err := m.FieldA.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18878,7 +18878,7 @@ func (m *CustomNameCustomType) MarshalTo(data []byte) (int, error) {
 	if m.FieldB != nil {
 		data[i] = 0x12
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.FieldB.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.FieldB.ProtoSize()))
 		n99, err := m.FieldB.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18889,7 +18889,7 @@ func (m *CustomNameCustomType) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.FieldC {
 			data[i] = 0x1a
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -18901,7 +18901,7 @@ func (m *CustomNameCustomType) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.FieldD {
 			data[i] = 0x22
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -18916,7 +18916,7 @@ func (m *CustomNameCustomType) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *CustomNameNinEmbeddedStructUnion) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -18933,7 +18933,7 @@ func (m *CustomNameNinEmbeddedStructUnion) MarshalTo(data []byte) (int, error) {
 	if m.NidOptNative != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.NidOptNative.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.NidOptNative.ProtoSize()))
 		n100, err := m.NidOptNative.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18945,7 +18945,7 @@ func (m *CustomNameNinEmbeddedStructUnion) MarshalTo(data []byte) (int, error) {
 		i++
 		data[i] = 0xc
 		i++
-		i = encodeVarintThetest(data, i, uint64(m.FieldA.Size()))
+		i = encodeVarintThetest(data, i, uint64(m.FieldA.ProtoSize()))
 		n101, err := m.FieldA.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -18971,7 +18971,7 @@ func (m *CustomNameNinEmbeddedStructUnion) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *CustomNameEnum) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -19004,7 +19004,7 @@ func (m *CustomNameEnum) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *NoExtensionsMap) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -19033,7 +19033,7 @@ func (m *NoExtensionsMap) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *Unrecognized) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -19057,7 +19057,7 @@ func (m *Unrecognized) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *UnrecognizedWithInner) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -19075,7 +19075,7 @@ func (m *UnrecognizedWithInner) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Embedded {
 			data[i] = 0xa
 			i++
-			i = encodeVarintThetest(data, i, uint64(msg.Size()))
+			i = encodeVarintThetest(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -19096,7 +19096,7 @@ func (m *UnrecognizedWithInner) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *UnrecognizedWithInner_Inner) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -19119,7 +19119,7 @@ func (m *UnrecognizedWithInner_Inner) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *UnrecognizedWithEmbed) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -19135,7 +19135,7 @@ func (m *UnrecognizedWithEmbed) MarshalTo(data []byte) (int, error) {
 	_ = l
 	data[i] = 0xa
 	i++
-	i = encodeVarintThetest(data, i, uint64(m.UnrecognizedWithEmbed_Embedded.Size()))
+	i = encodeVarintThetest(data, i, uint64(m.UnrecognizedWithEmbed_Embedded.ProtoSize()))
 	n102, err := m.UnrecognizedWithEmbed_Embedded.MarshalTo(data[i:])
 	if err != nil {
 		return 0, err
@@ -19154,7 +19154,7 @@ func (m *UnrecognizedWithEmbed) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *UnrecognizedWithEmbed_Embedded) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -21466,7 +21466,7 @@ func encodeVarintPopulateThetest(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *NidOptNative) Size() (n int) {
+func (m *NidOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
@@ -21494,7 +21494,7 @@ func (m *NidOptNative) Size() (n int) {
 	return n
 }
 
-func (m *NinOptNative) Size() (n int) {
+func (m *NinOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -21550,7 +21550,7 @@ func (m *NinOptNative) Size() (n int) {
 	return n
 }
 
-func (m *NidRepNative) Size() (n int) {
+func (m *NidRepNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -21622,7 +21622,7 @@ func (m *NidRepNative) Size() (n int) {
 	return n
 }
 
-func (m *NinRepNative) Size() (n int) {
+func (m *NinRepNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -21694,7 +21694,7 @@ func (m *NinRepNative) Size() (n int) {
 	return n
 }
 
-func (m *NidRepPackedNative) Size() (n int) {
+func (m *NidRepPackedNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -21766,7 +21766,7 @@ func (m *NidRepPackedNative) Size() (n int) {
 	return n
 }
 
-func (m *NinRepPackedNative) Size() (n int) {
+func (m *NinRepPackedNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -21838,18 +21838,18 @@ func (m *NinRepPackedNative) Size() (n int) {
 	return n
 }
 
-func (m *NidOptStruct) Size() (n int) {
+func (m *NidOptStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
 	n += 5
-	l = m.Field3.Size()
+	l = m.Field3.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Field4.Size()
+	l = m.Field4.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	n += 1 + sovThetest(uint64(m.Field6))
 	n += 1 + sozThetest(uint64(m.Field7))
-	l = m.Field8.Size()
+	l = m.Field8.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	n += 2
 	l = len(m.Field14)
@@ -21864,7 +21864,7 @@ func (m *NidOptStruct) Size() (n int) {
 	return n
 }
 
-func (m *NinOptStruct) Size() (n int) {
+func (m *NinOptStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -21874,11 +21874,11 @@ func (m *NinOptStruct) Size() (n int) {
 		n += 5
 	}
 	if m.Field3 != nil {
-		l = m.Field3.Size()
+		l = m.Field3.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field4 != nil {
-		l = m.Field4.Size()
+		l = m.Field4.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field6 != nil {
@@ -21888,7 +21888,7 @@ func (m *NinOptStruct) Size() (n int) {
 		n += 1 + sozThetest(uint64(*m.Field7))
 	}
 	if m.Field8 != nil {
-		l = m.Field8.Size()
+		l = m.Field8.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field13 != nil {
@@ -21908,7 +21908,7 @@ func (m *NinOptStruct) Size() (n int) {
 	return n
 }
 
-func (m *NidRepStruct) Size() (n int) {
+func (m *NidRepStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -21919,13 +21919,13 @@ func (m *NidRepStruct) Size() (n int) {
 	}
 	if len(m.Field3) > 0 {
 		for _, e := range m.Field3 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.Field4) > 0 {
 		for _, e := range m.Field4 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -21941,7 +21941,7 @@ func (m *NidRepStruct) Size() (n int) {
 	}
 	if len(m.Field8) > 0 {
 		for _, e := range m.Field8 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -21966,7 +21966,7 @@ func (m *NidRepStruct) Size() (n int) {
 	return n
 }
 
-func (m *NinRepStruct) Size() (n int) {
+func (m *NinRepStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -21977,13 +21977,13 @@ func (m *NinRepStruct) Size() (n int) {
 	}
 	if len(m.Field3) > 0 {
 		for _, e := range m.Field3 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.Field4) > 0 {
 		for _, e := range m.Field4 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -21999,7 +21999,7 @@ func (m *NinRepStruct) Size() (n int) {
 	}
 	if len(m.Field8) > 0 {
 		for _, e := range m.Field8 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -22024,14 +22024,14 @@ func (m *NinRepStruct) Size() (n int) {
 	return n
 }
 
-func (m *NidEmbeddedStruct) Size() (n int) {
+func (m *NidEmbeddedStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NidOptNative != nil {
-		l = m.NidOptNative.Size()
+		l = m.NidOptNative.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
-	l = m.Field200.Size()
+	l = m.Field200.ProtoSize()
 	n += 2 + l + sovThetest(uint64(l))
 	n += 3
 	if m.XXX_unrecognized != nil {
@@ -22040,15 +22040,15 @@ func (m *NidEmbeddedStruct) Size() (n int) {
 	return n
 }
 
-func (m *NinEmbeddedStruct) Size() (n int) {
+func (m *NinEmbeddedStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NidOptNative != nil {
-		l = m.NidOptNative.Size()
+		l = m.NidOptNative.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field200 != nil {
-		l = m.Field200.Size()
+		l = m.Field200.ProtoSize()
 		n += 2 + l + sovThetest(uint64(l))
 	}
 	if m.Field210 != nil {
@@ -22060,14 +22060,14 @@ func (m *NinEmbeddedStruct) Size() (n int) {
 	return n
 }
 
-func (m *NidNestedStruct) Size() (n int) {
+func (m *NidNestedStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Field1.Size()
+	l = m.Field1.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if len(m.Field2) > 0 {
 		for _, e := range m.Field2 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -22077,16 +22077,16 @@ func (m *NidNestedStruct) Size() (n int) {
 	return n
 }
 
-func (m *NinNestedStruct) Size() (n int) {
+func (m *NinNestedStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
-		l = m.Field1.Size()
+		l = m.Field1.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if len(m.Field2) > 0 {
 		for _, e := range m.Field2 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -22096,12 +22096,12 @@ func (m *NinNestedStruct) Size() (n int) {
 	return n
 }
 
-func (m *NidOptCustom) Size() (n int) {
+func (m *NidOptCustom) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Id.Size()
+	l = m.Id.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Value.Size()
+	l = m.Value.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -22109,11 +22109,11 @@ func (m *NidOptCustom) Size() (n int) {
 	return n
 }
 
-func (m *CustomDash) Size() (n int) {
+func (m *CustomDash) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Value != nil {
-		l = m.Value.Size()
+		l = m.Value.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -22122,15 +22122,15 @@ func (m *CustomDash) Size() (n int) {
 	return n
 }
 
-func (m *NinOptCustom) Size() (n int) {
+func (m *NinOptCustom) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Id != nil {
-		l = m.Id.Size()
+		l = m.Id.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Value != nil {
-		l = m.Value.Size()
+		l = m.Value.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -22139,18 +22139,18 @@ func (m *NinOptCustom) Size() (n int) {
 	return n
 }
 
-func (m *NidRepCustom) Size() (n int) {
+func (m *NidRepCustom) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Id) > 0 {
 		for _, e := range m.Id {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.Value) > 0 {
 		for _, e := range m.Value {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -22160,18 +22160,18 @@ func (m *NidRepCustom) Size() (n int) {
 	return n
 }
 
-func (m *NinRepCustom) Size() (n int) {
+func (m *NinRepCustom) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Id) > 0 {
 		for _, e := range m.Id {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.Value) > 0 {
 		for _, e := range m.Value {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -22181,7 +22181,7 @@ func (m *NinRepCustom) Size() (n int) {
 	return n
 }
 
-func (m *NinOptNativeUnion) Size() (n int) {
+func (m *NinOptNativeUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22219,7 +22219,7 @@ func (m *NinOptNativeUnion) Size() (n int) {
 	return n
 }
 
-func (m *NinOptStructUnion) Size() (n int) {
+func (m *NinOptStructUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22229,11 +22229,11 @@ func (m *NinOptStructUnion) Size() (n int) {
 		n += 5
 	}
 	if m.Field3 != nil {
-		l = m.Field3.Size()
+		l = m.Field3.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field4 != nil {
-		l = m.Field4.Size()
+		l = m.Field4.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field6 != nil {
@@ -22259,15 +22259,15 @@ func (m *NinOptStructUnion) Size() (n int) {
 	return n
 }
 
-func (m *NinEmbeddedStructUnion) Size() (n int) {
+func (m *NinEmbeddedStructUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NidOptNative != nil {
-		l = m.NidOptNative.Size()
+		l = m.NidOptNative.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field200 != nil {
-		l = m.Field200.Size()
+		l = m.Field200.ProtoSize()
 		n += 2 + l + sovThetest(uint64(l))
 	}
 	if m.Field210 != nil {
@@ -22279,19 +22279,19 @@ func (m *NinEmbeddedStructUnion) Size() (n int) {
 	return n
 }
 
-func (m *NinNestedStructUnion) Size() (n int) {
+func (m *NinNestedStructUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
-		l = m.Field1.Size()
+		l = m.Field1.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field2 != nil {
-		l = m.Field2.Size()
+		l = m.Field2.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field3 != nil {
-		l = m.Field3.Size()
+		l = m.Field3.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -22300,19 +22300,19 @@ func (m *NinNestedStructUnion) Size() (n int) {
 	return n
 }
 
-func (m *Tree) Size() (n int) {
+func (m *Tree) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Or != nil {
-		l = m.Or.Size()
+		l = m.Or.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.And != nil {
-		l = m.And.Size()
+		l = m.And.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Leaf != nil {
-		l = m.Leaf.Size()
+		l = m.Leaf.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -22321,12 +22321,12 @@ func (m *Tree) Size() (n int) {
 	return n
 }
 
-func (m *OrBranch) Size() (n int) {
+func (m *OrBranch) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Left.Size()
+	l = m.Left.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Right.Size()
+	l = m.Right.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -22334,12 +22334,12 @@ func (m *OrBranch) Size() (n int) {
 	return n
 }
 
-func (m *AndBranch) Size() (n int) {
+func (m *AndBranch) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Left.Size()
+	l = m.Left.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Right.Size()
+	l = m.Right.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -22347,7 +22347,7 @@ func (m *AndBranch) Size() (n int) {
 	return n
 }
 
-func (m *Leaf) Size() (n int) {
+func (m *Leaf) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sovThetest(uint64(m.Value))
@@ -22359,19 +22359,19 @@ func (m *Leaf) Size() (n int) {
 	return n
 }
 
-func (m *DeepTree) Size() (n int) {
+func (m *DeepTree) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Down != nil {
-		l = m.Down.Size()
+		l = m.Down.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.And != nil {
-		l = m.And.Size()
+		l = m.And.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Leaf != nil {
-		l = m.Leaf.Size()
+		l = m.Leaf.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -22380,10 +22380,10 @@ func (m *DeepTree) Size() (n int) {
 	return n
 }
 
-func (m *ADeepBranch) Size() (n int) {
+func (m *ADeepBranch) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Down.Size()
+	l = m.Down.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -22391,23 +22391,12 @@ func (m *ADeepBranch) Size() (n int) {
 	return n
 }
 
-func (m *AndDeepBranch) Size() (n int) {
+func (m *AndDeepBranch) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Left.Size()
+	l = m.Left.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Right.Size()
-	n += 1 + l + sovThetest(uint64(l))
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *DeepLeaf) Size() (n int) {
-	var l int
-	_ = l
-	l = m.Tree.Size()
+	l = m.Right.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -22415,7 +22404,18 @@ func (m *DeepLeaf) Size() (n int) {
 	return n
 }
 
-func (m *Nil) Size() (n int) {
+func (m *DeepLeaf) ProtoSize() (n int) {
+	var l int
+	_ = l
+	l = m.Tree.ProtoSize()
+	n += 1 + l + sovThetest(uint64(l))
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *Nil) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.XXX_unrecognized != nil {
@@ -22424,7 +22424,7 @@ func (m *Nil) Size() (n int) {
 	return n
 }
 
-func (m *NidOptEnum) Size() (n int) {
+func (m *NidOptEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sovThetest(uint64(m.Field1))
@@ -22434,7 +22434,7 @@ func (m *NidOptEnum) Size() (n int) {
 	return n
 }
 
-func (m *NinOptEnum) Size() (n int) {
+func (m *NinOptEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22446,7 +22446,7 @@ func (m *NinOptEnum) Size() (n int) {
 	return n
 }
 
-func (m *NidRepEnum) Size() (n int) {
+func (m *NidRepEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -22460,7 +22460,7 @@ func (m *NidRepEnum) Size() (n int) {
 	return n
 }
 
-func (m *NinRepEnum) Size() (n int) {
+func (m *NinRepEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -22474,7 +22474,7 @@ func (m *NinRepEnum) Size() (n int) {
 	return n
 }
 
-func (m *NinOptEnumDefault) Size() (n int) {
+func (m *NinOptEnumDefault) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22486,7 +22486,7 @@ func (m *NinOptEnumDefault) Size() (n int) {
 	return n
 }
 
-func (m *AnotherNinOptEnum) Size() (n int) {
+func (m *AnotherNinOptEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22498,7 +22498,7 @@ func (m *AnotherNinOptEnum) Size() (n int) {
 	return n
 }
 
-func (m *AnotherNinOptEnumDefault) Size() (n int) {
+func (m *AnotherNinOptEnumDefault) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22510,7 +22510,7 @@ func (m *AnotherNinOptEnumDefault) Size() (n int) {
 	return n
 }
 
-func (m *Timer) Size() (n int) {
+func (m *Timer) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
@@ -22525,7 +22525,7 @@ func (m *Timer) Size() (n int) {
 	return n
 }
 
-func (m *MyExtendable) Size() (n int) {
+func (m *MyExtendable) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22540,11 +22540,11 @@ func (m *MyExtendable) Size() (n int) {
 	return n
 }
 
-func (m *OtherExtenable) Size() (n int) {
+func (m *OtherExtenable) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.M != nil {
-		l = m.M.Size()
+		l = m.M.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field2 != nil {
@@ -22562,7 +22562,7 @@ func (m *OtherExtenable) Size() (n int) {
 	return n
 }
 
-func (m *NestedDefinition) Size() (n int) {
+func (m *NestedDefinition) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22572,11 +22572,11 @@ func (m *NestedDefinition) Size() (n int) {
 		n += 1 + sovThetest(uint64(*m.EnumField))
 	}
 	if m.NNM != nil {
-		l = m.NNM.Size()
+		l = m.NNM.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.NM != nil {
-		l = m.NM.Size()
+		l = m.NM.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -22585,14 +22585,14 @@ func (m *NestedDefinition) Size() (n int) {
 	return n
 }
 
-func (m *NestedDefinition_NestedMessage) Size() (n int) {
+func (m *NestedDefinition_NestedMessage) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NestedField1 != nil {
 		n += 9
 	}
 	if m.NNM != nil {
-		l = m.NNM.Size()
+		l = m.NNM.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -22601,7 +22601,7 @@ func (m *NestedDefinition_NestedMessage) Size() (n int) {
 	return n
 }
 
-func (m *NestedDefinition_NestedMessage_NestedNestedMsg) Size() (n int) {
+func (m *NestedDefinition_NestedMessage_NestedNestedMsg) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NestedNestedField1 != nil {
@@ -22614,18 +22614,18 @@ func (m *NestedDefinition_NestedMessage_NestedNestedMsg) Size() (n int) {
 	return n
 }
 
-func (m *NestedScope) Size() (n int) {
+func (m *NestedScope) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.A != nil {
-		l = m.A.Size()
+		l = m.A.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.B != nil {
 		n += 1 + sovThetest(uint64(*m.B))
 	}
 	if m.C != nil {
-		l = m.C.Size()
+		l = m.C.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -22634,7 +22634,7 @@ func (m *NestedScope) Size() (n int) {
 	return n
 }
 
-func (m *NinOptNativeDefault) Size() (n int) {
+func (m *NinOptNativeDefault) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22690,10 +22690,10 @@ func (m *NinOptNativeDefault) Size() (n int) {
 	return n
 }
 
-func (m *CustomContainer) Size() (n int) {
+func (m *CustomContainer) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.CustomStruct.Size()
+	l = m.CustomStruct.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -22701,7 +22701,7 @@ func (m *CustomContainer) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNidOptNative) Size() (n int) {
+func (m *CustomNameNidOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
@@ -22729,7 +22729,7 @@ func (m *CustomNameNidOptNative) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNinOptNative) Size() (n int) {
+func (m *CustomNameNinOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.FieldA != nil {
@@ -22785,7 +22785,7 @@ func (m *CustomNameNinOptNative) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNinRepNative) Size() (n int) {
+func (m *CustomNameNinRepNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.FieldA) > 0 {
@@ -22857,7 +22857,7 @@ func (m *CustomNameNinRepNative) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNinStruct) Size() (n int) {
+func (m *CustomNameNinStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.FieldA != nil {
@@ -22867,12 +22867,12 @@ func (m *CustomNameNinStruct) Size() (n int) {
 		n += 5
 	}
 	if m.FieldC != nil {
-		l = m.FieldC.Size()
+		l = m.FieldC.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if len(m.FieldD) > 0 {
 		for _, e := range m.FieldD {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -22883,7 +22883,7 @@ func (m *CustomNameNinStruct) Size() (n int) {
 		n += 1 + sozThetest(uint64(*m.FieldF))
 	}
 	if m.FieldG != nil {
-		l = m.FieldG.Size()
+		l = m.FieldG.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.FieldH != nil {
@@ -22903,26 +22903,26 @@ func (m *CustomNameNinStruct) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameCustomType) Size() (n int) {
+func (m *CustomNameCustomType) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.FieldA != nil {
-		l = m.FieldA.Size()
+		l = m.FieldA.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.FieldB != nil {
-		l = m.FieldB.Size()
+		l = m.FieldB.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if len(m.FieldC) > 0 {
 		for _, e := range m.FieldC {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.FieldD) > 0 {
 		for _, e := range m.FieldD {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -22932,15 +22932,15 @@ func (m *CustomNameCustomType) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNinEmbeddedStructUnion) Size() (n int) {
+func (m *CustomNameNinEmbeddedStructUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NidOptNative != nil {
-		l = m.NidOptNative.Size()
+		l = m.NidOptNative.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.FieldA != nil {
-		l = m.FieldA.Size()
+		l = m.FieldA.ProtoSize()
 		n += 2 + l + sovThetest(uint64(l))
 	}
 	if m.FieldB != nil {
@@ -22952,7 +22952,7 @@ func (m *CustomNameNinEmbeddedStructUnion) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameEnum) Size() (n int) {
+func (m *CustomNameEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.FieldA != nil {
@@ -22969,7 +22969,7 @@ func (m *CustomNameEnum) Size() (n int) {
 	return n
 }
 
-func (m *NoExtensionsMap) Size() (n int) {
+func (m *NoExtensionsMap) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22984,7 +22984,7 @@ func (m *NoExtensionsMap) Size() (n int) {
 	return n
 }
 
-func (m *Unrecognized) Size() (n int) {
+func (m *Unrecognized) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -22994,12 +22994,12 @@ func (m *Unrecognized) Size() (n int) {
 	return n
 }
 
-func (m *UnrecognizedWithInner) Size() (n int) {
+func (m *UnrecognizedWithInner) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Embedded) > 0 {
 		for _, e := range m.Embedded {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -23013,7 +23013,7 @@ func (m *UnrecognizedWithInner) Size() (n int) {
 	return n
 }
 
-func (m *UnrecognizedWithInner_Inner) Size() (n int) {
+func (m *UnrecognizedWithInner_Inner) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -23022,10 +23022,10 @@ func (m *UnrecognizedWithInner_Inner) Size() (n int) {
 	return n
 }
 
-func (m *UnrecognizedWithEmbed) Size() (n int) {
+func (m *UnrecognizedWithEmbed) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.UnrecognizedWithEmbed_Embedded.Size()
+	l = m.UnrecognizedWithEmbed_Embedded.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.Field2 != nil {
 		l = len(*m.Field2)
@@ -23037,7 +23037,7 @@ func (m *UnrecognizedWithEmbed) Size() (n int) {
 	return n
 }
 
-func (m *UnrecognizedWithEmbed_Embedded) Size() (n int) {
+func (m *UnrecognizedWithEmbed_Embedded) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {

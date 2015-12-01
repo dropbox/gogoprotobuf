@@ -1654,7 +1654,7 @@ func extensionToGoStringUnrecognizedgroup(e map[int32]github_com_gogo_protobuf_p
 	return s
 }
 func (m *NewNoGroup) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -1699,7 +1699,7 @@ func (m *NewNoGroup) MarshalTo(data []byte) (int, error) {
 	if m.A != nil {
 		data[i] = 0x2a
 		i++
-		i = encodeVarintUnrecognizedgroup(data, i, uint64(m.A.Size()))
+		i = encodeVarintUnrecognizedgroup(data, i, uint64(m.A.ProtoSize()))
 		n2, err := m.A.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -1713,7 +1713,7 @@ func (m *NewNoGroup) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *A) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -1968,7 +1968,7 @@ func encodeVarintPopulateUnrecognizedgroup(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *NewNoGroup) Size() (n int) {
+func (m *NewNoGroup) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -1978,7 +1978,7 @@ func (m *NewNoGroup) Size() (n int) {
 		n += 9 * len(m.Field3)
 	}
 	if m.A != nil {
-		l = m.A.Size()
+		l = m.A.ProtoSize()
 		n += 1 + l + sovUnrecognizedgroup(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -1987,7 +1987,7 @@ func (m *NewNoGroup) Size() (n int) {
 	return n
 }
 
-func (m *A) Size() (n int) {
+func (m *A) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.AField != nil {

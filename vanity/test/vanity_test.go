@@ -29,36 +29,37 @@
 package test
 
 import (
+	"testing"
+
 	fast "github.com/gogo/protobuf/vanity/test/fast"
 	faster "github.com/gogo/protobuf/vanity/test/faster"
 	slick "github.com/gogo/protobuf/vanity/test/slick"
-	"testing"
 )
 
 func TestFast(t *testing.T) {
 	_ = (&fast.A{}).Marshal
 	_ = (&fast.A{}).MarshalTo
 	_ = (&fast.A{}).Unmarshal
-	_ = (&fast.A{}).Size
+	_ = (&fast.A{}).ProtoSize
 
 	_ = (&fast.B{}).Marshal
 	_ = (&fast.B{}).MarshalTo
 	_ = (&fast.B{}).Unmarshal
-	_ = (&fast.B{}).Size
+	_ = (&fast.B{}).ProtoSize
 }
 
 func TestFaster(t *testing.T) {
 	_ = (&faster.A{}).Marshal
 	_ = (&faster.A{}).MarshalTo
 	_ = (&faster.A{}).Unmarshal
-	_ = (&faster.A{}).Size
+	_ = (&faster.A{}).ProtoSize
 
 	_ = (&faster.A{}).Strings == ""
 
 	_ = (&faster.B{}).Marshal
 	_ = (&faster.B{}).MarshalTo
 	_ = (&faster.B{}).Unmarshal
-	_ = (&faster.B{}).Size
+	_ = (&faster.B{}).ProtoSize
 
 	_ = (&faster.B{}).String_ == nil
 	_ = (&faster.B{}).Int64 == 0
@@ -72,7 +73,7 @@ func TestSlick(t *testing.T) {
 	_ = (&slick.A{}).Marshal
 	_ = (&slick.A{}).MarshalTo
 	_ = (&slick.A{}).Unmarshal
-	_ = (&slick.A{}).Size
+	_ = (&slick.A{}).ProtoSize
 
 	_ = (&slick.A{}).Strings == ""
 
@@ -82,7 +83,7 @@ func TestSlick(t *testing.T) {
 	_ = (&slick.B{}).Marshal
 	_ = (&slick.B{}).MarshalTo
 	_ = (&slick.B{}).Unmarshal
-	_ = (&slick.B{}).Size
+	_ = (&slick.B{}).ProtoSize
 
 	_ = (&slick.B{}).String_ == nil
 	_ = (&slick.B{}).Int64 == 0

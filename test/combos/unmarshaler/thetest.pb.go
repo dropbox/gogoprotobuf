@@ -17453,7 +17453,7 @@ func encodeVarintPopulateThetest(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *NidOptNative) Size() (n int) {
+func (m *NidOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
@@ -17481,7 +17481,7 @@ func (m *NidOptNative) Size() (n int) {
 	return n
 }
 
-func (m *NinOptNative) Size() (n int) {
+func (m *NinOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -17537,7 +17537,7 @@ func (m *NinOptNative) Size() (n int) {
 	return n
 }
 
-func (m *NidRepNative) Size() (n int) {
+func (m *NidRepNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -17609,7 +17609,7 @@ func (m *NidRepNative) Size() (n int) {
 	return n
 }
 
-func (m *NinRepNative) Size() (n int) {
+func (m *NinRepNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -17681,7 +17681,7 @@ func (m *NinRepNative) Size() (n int) {
 	return n
 }
 
-func (m *NidRepPackedNative) Size() (n int) {
+func (m *NidRepPackedNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -17753,7 +17753,7 @@ func (m *NidRepPackedNative) Size() (n int) {
 	return n
 }
 
-func (m *NinRepPackedNative) Size() (n int) {
+func (m *NinRepPackedNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -17825,18 +17825,18 @@ func (m *NinRepPackedNative) Size() (n int) {
 	return n
 }
 
-func (m *NidOptStruct) Size() (n int) {
+func (m *NidOptStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
 	n += 5
-	l = m.Field3.Size()
+	l = m.Field3.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Field4.Size()
+	l = m.Field4.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	n += 1 + sovThetest(uint64(m.Field6))
 	n += 1 + sozThetest(uint64(m.Field7))
-	l = m.Field8.Size()
+	l = m.Field8.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	n += 2
 	l = len(m.Field14)
@@ -17851,7 +17851,7 @@ func (m *NidOptStruct) Size() (n int) {
 	return n
 }
 
-func (m *NinOptStruct) Size() (n int) {
+func (m *NinOptStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -17861,11 +17861,11 @@ func (m *NinOptStruct) Size() (n int) {
 		n += 5
 	}
 	if m.Field3 != nil {
-		l = m.Field3.Size()
+		l = m.Field3.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field4 != nil {
-		l = m.Field4.Size()
+		l = m.Field4.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field6 != nil {
@@ -17875,7 +17875,7 @@ func (m *NinOptStruct) Size() (n int) {
 		n += 1 + sozThetest(uint64(*m.Field7))
 	}
 	if m.Field8 != nil {
-		l = m.Field8.Size()
+		l = m.Field8.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field13 != nil {
@@ -17895,7 +17895,7 @@ func (m *NinOptStruct) Size() (n int) {
 	return n
 }
 
-func (m *NidRepStruct) Size() (n int) {
+func (m *NidRepStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -17906,13 +17906,13 @@ func (m *NidRepStruct) Size() (n int) {
 	}
 	if len(m.Field3) > 0 {
 		for _, e := range m.Field3 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.Field4) > 0 {
 		for _, e := range m.Field4 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -17928,7 +17928,7 @@ func (m *NidRepStruct) Size() (n int) {
 	}
 	if len(m.Field8) > 0 {
 		for _, e := range m.Field8 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -17953,7 +17953,7 @@ func (m *NidRepStruct) Size() (n int) {
 	return n
 }
 
-func (m *NinRepStruct) Size() (n int) {
+func (m *NinRepStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -17964,13 +17964,13 @@ func (m *NinRepStruct) Size() (n int) {
 	}
 	if len(m.Field3) > 0 {
 		for _, e := range m.Field3 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.Field4) > 0 {
 		for _, e := range m.Field4 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -17986,7 +17986,7 @@ func (m *NinRepStruct) Size() (n int) {
 	}
 	if len(m.Field8) > 0 {
 		for _, e := range m.Field8 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -18011,14 +18011,14 @@ func (m *NinRepStruct) Size() (n int) {
 	return n
 }
 
-func (m *NidEmbeddedStruct) Size() (n int) {
+func (m *NidEmbeddedStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NidOptNative != nil {
-		l = m.NidOptNative.Size()
+		l = m.NidOptNative.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
-	l = m.Field200.Size()
+	l = m.Field200.ProtoSize()
 	n += 2 + l + sovThetest(uint64(l))
 	n += 3
 	if m.XXX_unrecognized != nil {
@@ -18027,15 +18027,15 @@ func (m *NidEmbeddedStruct) Size() (n int) {
 	return n
 }
 
-func (m *NinEmbeddedStruct) Size() (n int) {
+func (m *NinEmbeddedStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NidOptNative != nil {
-		l = m.NidOptNative.Size()
+		l = m.NidOptNative.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field200 != nil {
-		l = m.Field200.Size()
+		l = m.Field200.ProtoSize()
 		n += 2 + l + sovThetest(uint64(l))
 	}
 	if m.Field210 != nil {
@@ -18047,14 +18047,14 @@ func (m *NinEmbeddedStruct) Size() (n int) {
 	return n
 }
 
-func (m *NidNestedStruct) Size() (n int) {
+func (m *NidNestedStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Field1.Size()
+	l = m.Field1.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if len(m.Field2) > 0 {
 		for _, e := range m.Field2 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -18064,16 +18064,16 @@ func (m *NidNestedStruct) Size() (n int) {
 	return n
 }
 
-func (m *NinNestedStruct) Size() (n int) {
+func (m *NinNestedStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
-		l = m.Field1.Size()
+		l = m.Field1.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if len(m.Field2) > 0 {
 		for _, e := range m.Field2 {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -18083,12 +18083,12 @@ func (m *NinNestedStruct) Size() (n int) {
 	return n
 }
 
-func (m *NidOptCustom) Size() (n int) {
+func (m *NidOptCustom) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Id.Size()
+	l = m.Id.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Value.Size()
+	l = m.Value.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -18096,11 +18096,11 @@ func (m *NidOptCustom) Size() (n int) {
 	return n
 }
 
-func (m *CustomDash) Size() (n int) {
+func (m *CustomDash) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Value != nil {
-		l = m.Value.Size()
+		l = m.Value.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -18109,15 +18109,15 @@ func (m *CustomDash) Size() (n int) {
 	return n
 }
 
-func (m *NinOptCustom) Size() (n int) {
+func (m *NinOptCustom) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Id != nil {
-		l = m.Id.Size()
+		l = m.Id.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Value != nil {
-		l = m.Value.Size()
+		l = m.Value.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -18126,18 +18126,18 @@ func (m *NinOptCustom) Size() (n int) {
 	return n
 }
 
-func (m *NidRepCustom) Size() (n int) {
+func (m *NidRepCustom) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Id) > 0 {
 		for _, e := range m.Id {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.Value) > 0 {
 		for _, e := range m.Value {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -18147,18 +18147,18 @@ func (m *NidRepCustom) Size() (n int) {
 	return n
 }
 
-func (m *NinRepCustom) Size() (n int) {
+func (m *NinRepCustom) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Id) > 0 {
 		for _, e := range m.Id {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.Value) > 0 {
 		for _, e := range m.Value {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -18168,7 +18168,7 @@ func (m *NinRepCustom) Size() (n int) {
 	return n
 }
 
-func (m *NinOptNativeUnion) Size() (n int) {
+func (m *NinOptNativeUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18206,7 +18206,7 @@ func (m *NinOptNativeUnion) Size() (n int) {
 	return n
 }
 
-func (m *NinOptStructUnion) Size() (n int) {
+func (m *NinOptStructUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18216,11 +18216,11 @@ func (m *NinOptStructUnion) Size() (n int) {
 		n += 5
 	}
 	if m.Field3 != nil {
-		l = m.Field3.Size()
+		l = m.Field3.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field4 != nil {
-		l = m.Field4.Size()
+		l = m.Field4.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field6 != nil {
@@ -18246,15 +18246,15 @@ func (m *NinOptStructUnion) Size() (n int) {
 	return n
 }
 
-func (m *NinEmbeddedStructUnion) Size() (n int) {
+func (m *NinEmbeddedStructUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NidOptNative != nil {
-		l = m.NidOptNative.Size()
+		l = m.NidOptNative.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field200 != nil {
-		l = m.Field200.Size()
+		l = m.Field200.ProtoSize()
 		n += 2 + l + sovThetest(uint64(l))
 	}
 	if m.Field210 != nil {
@@ -18266,19 +18266,19 @@ func (m *NinEmbeddedStructUnion) Size() (n int) {
 	return n
 }
 
-func (m *NinNestedStructUnion) Size() (n int) {
+func (m *NinNestedStructUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
-		l = m.Field1.Size()
+		l = m.Field1.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field2 != nil {
-		l = m.Field2.Size()
+		l = m.Field2.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Field3 != nil {
-		l = m.Field3.Size()
+		l = m.Field3.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -18287,19 +18287,19 @@ func (m *NinNestedStructUnion) Size() (n int) {
 	return n
 }
 
-func (m *Tree) Size() (n int) {
+func (m *Tree) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Or != nil {
-		l = m.Or.Size()
+		l = m.Or.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.And != nil {
-		l = m.And.Size()
+		l = m.And.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Leaf != nil {
-		l = m.Leaf.Size()
+		l = m.Leaf.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -18308,12 +18308,12 @@ func (m *Tree) Size() (n int) {
 	return n
 }
 
-func (m *OrBranch) Size() (n int) {
+func (m *OrBranch) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Left.Size()
+	l = m.Left.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Right.Size()
+	l = m.Right.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -18321,12 +18321,12 @@ func (m *OrBranch) Size() (n int) {
 	return n
 }
 
-func (m *AndBranch) Size() (n int) {
+func (m *AndBranch) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Left.Size()
+	l = m.Left.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Right.Size()
+	l = m.Right.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -18334,7 +18334,7 @@ func (m *AndBranch) Size() (n int) {
 	return n
 }
 
-func (m *Leaf) Size() (n int) {
+func (m *Leaf) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sovThetest(uint64(m.Value))
@@ -18346,19 +18346,19 @@ func (m *Leaf) Size() (n int) {
 	return n
 }
 
-func (m *DeepTree) Size() (n int) {
+func (m *DeepTree) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Down != nil {
-		l = m.Down.Size()
+		l = m.Down.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.And != nil {
-		l = m.And.Size()
+		l = m.And.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.Leaf != nil {
-		l = m.Leaf.Size()
+		l = m.Leaf.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -18367,10 +18367,10 @@ func (m *DeepTree) Size() (n int) {
 	return n
 }
 
-func (m *ADeepBranch) Size() (n int) {
+func (m *ADeepBranch) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Down.Size()
+	l = m.Down.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -18378,23 +18378,12 @@ func (m *ADeepBranch) Size() (n int) {
 	return n
 }
 
-func (m *AndDeepBranch) Size() (n int) {
+func (m *AndDeepBranch) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.Left.Size()
+	l = m.Left.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
-	l = m.Right.Size()
-	n += 1 + l + sovThetest(uint64(l))
-	if m.XXX_unrecognized != nil {
-		n += len(m.XXX_unrecognized)
-	}
-	return n
-}
-
-func (m *DeepLeaf) Size() (n int) {
-	var l int
-	_ = l
-	l = m.Tree.Size()
+	l = m.Right.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -18402,7 +18391,18 @@ func (m *DeepLeaf) Size() (n int) {
 	return n
 }
 
-func (m *Nil) Size() (n int) {
+func (m *DeepLeaf) ProtoSize() (n int) {
+	var l int
+	_ = l
+	l = m.Tree.ProtoSize()
+	n += 1 + l + sovThetest(uint64(l))
+	if m.XXX_unrecognized != nil {
+		n += len(m.XXX_unrecognized)
+	}
+	return n
+}
+
+func (m *Nil) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.XXX_unrecognized != nil {
@@ -18411,7 +18411,7 @@ func (m *Nil) Size() (n int) {
 	return n
 }
 
-func (m *NidOptEnum) Size() (n int) {
+func (m *NidOptEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 1 + sovThetest(uint64(m.Field1))
@@ -18421,7 +18421,7 @@ func (m *NidOptEnum) Size() (n int) {
 	return n
 }
 
-func (m *NinOptEnum) Size() (n int) {
+func (m *NinOptEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18433,7 +18433,7 @@ func (m *NinOptEnum) Size() (n int) {
 	return n
 }
 
-func (m *NidRepEnum) Size() (n int) {
+func (m *NidRepEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -18447,7 +18447,7 @@ func (m *NidRepEnum) Size() (n int) {
 	return n
 }
 
-func (m *NinRepEnum) Size() (n int) {
+func (m *NinRepEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field1) > 0 {
@@ -18461,7 +18461,7 @@ func (m *NinRepEnum) Size() (n int) {
 	return n
 }
 
-func (m *NinOptEnumDefault) Size() (n int) {
+func (m *NinOptEnumDefault) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18473,7 +18473,7 @@ func (m *NinOptEnumDefault) Size() (n int) {
 	return n
 }
 
-func (m *AnotherNinOptEnum) Size() (n int) {
+func (m *AnotherNinOptEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18485,7 +18485,7 @@ func (m *AnotherNinOptEnum) Size() (n int) {
 	return n
 }
 
-func (m *AnotherNinOptEnumDefault) Size() (n int) {
+func (m *AnotherNinOptEnumDefault) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18497,7 +18497,7 @@ func (m *AnotherNinOptEnumDefault) Size() (n int) {
 	return n
 }
 
-func (m *Timer) Size() (n int) {
+func (m *Timer) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
@@ -18512,7 +18512,7 @@ func (m *Timer) Size() (n int) {
 	return n
 }
 
-func (m *MyExtendable) Size() (n int) {
+func (m *MyExtendable) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18527,7 +18527,7 @@ func (m *MyExtendable) Size() (n int) {
 	return n
 }
 
-func (m *OtherExtenable) Size() (n int) {
+func (m *OtherExtenable) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field2 != nil {
@@ -18537,7 +18537,7 @@ func (m *OtherExtenable) Size() (n int) {
 		n += 1 + sovThetest(uint64(*m.Field13))
 	}
 	if m.M != nil {
-		l = m.M.Size()
+		l = m.M.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_extensions != nil {
@@ -18549,7 +18549,7 @@ func (m *OtherExtenable) Size() (n int) {
 	return n
 }
 
-func (m *NestedDefinition) Size() (n int) {
+func (m *NestedDefinition) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18559,11 +18559,11 @@ func (m *NestedDefinition) Size() (n int) {
 		n += 1 + sovThetest(uint64(*m.EnumField))
 	}
 	if m.NNM != nil {
-		l = m.NNM.Size()
+		l = m.NNM.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.NM != nil {
-		l = m.NM.Size()
+		l = m.NM.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -18572,14 +18572,14 @@ func (m *NestedDefinition) Size() (n int) {
 	return n
 }
 
-func (m *NestedDefinition_NestedMessage) Size() (n int) {
+func (m *NestedDefinition_NestedMessage) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NestedField1 != nil {
 		n += 9
 	}
 	if m.NNM != nil {
-		l = m.NNM.Size()
+		l = m.NNM.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -18588,7 +18588,7 @@ func (m *NestedDefinition_NestedMessage) Size() (n int) {
 	return n
 }
 
-func (m *NestedDefinition_NestedMessage_NestedNestedMsg) Size() (n int) {
+func (m *NestedDefinition_NestedMessage_NestedNestedMsg) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NestedNestedField1 != nil {
@@ -18601,18 +18601,18 @@ func (m *NestedDefinition_NestedMessage_NestedNestedMsg) Size() (n int) {
 	return n
 }
 
-func (m *NestedScope) Size() (n int) {
+func (m *NestedScope) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.A != nil {
-		l = m.A.Size()
+		l = m.A.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.B != nil {
 		n += 1 + sovThetest(uint64(*m.B))
 	}
 	if m.C != nil {
-		l = m.C.Size()
+		l = m.C.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -18621,7 +18621,7 @@ func (m *NestedScope) Size() (n int) {
 	return n
 }
 
-func (m *NinOptNativeDefault) Size() (n int) {
+func (m *NinOptNativeDefault) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18677,10 +18677,10 @@ func (m *NinOptNativeDefault) Size() (n int) {
 	return n
 }
 
-func (m *CustomContainer) Size() (n int) {
+func (m *CustomContainer) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.CustomStruct.Size()
+	l = m.CustomStruct.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.XXX_unrecognized != nil {
 		n += len(m.XXX_unrecognized)
@@ -18688,7 +18688,7 @@ func (m *CustomContainer) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNidOptNative) Size() (n int) {
+func (m *CustomNameNidOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	n += 9
@@ -18716,7 +18716,7 @@ func (m *CustomNameNidOptNative) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNinOptNative) Size() (n int) {
+func (m *CustomNameNinOptNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.FieldA != nil {
@@ -18772,7 +18772,7 @@ func (m *CustomNameNinOptNative) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNinRepNative) Size() (n int) {
+func (m *CustomNameNinRepNative) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.FieldA) > 0 {
@@ -18844,7 +18844,7 @@ func (m *CustomNameNinRepNative) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNinStruct) Size() (n int) {
+func (m *CustomNameNinStruct) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.FieldA != nil {
@@ -18854,12 +18854,12 @@ func (m *CustomNameNinStruct) Size() (n int) {
 		n += 5
 	}
 	if m.FieldC != nil {
-		l = m.FieldC.Size()
+		l = m.FieldC.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if len(m.FieldD) > 0 {
 		for _, e := range m.FieldD {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -18870,7 +18870,7 @@ func (m *CustomNameNinStruct) Size() (n int) {
 		n += 1 + sozThetest(uint64(*m.FieldF))
 	}
 	if m.FieldG != nil {
-		l = m.FieldG.Size()
+		l = m.FieldG.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.FieldH != nil {
@@ -18890,26 +18890,26 @@ func (m *CustomNameNinStruct) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameCustomType) Size() (n int) {
+func (m *CustomNameCustomType) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.FieldA != nil {
-		l = m.FieldA.Size()
+		l = m.FieldA.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.FieldB != nil {
-		l = m.FieldB.Size()
+		l = m.FieldB.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if len(m.FieldC) > 0 {
 		for _, e := range m.FieldC {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
 	if len(m.FieldD) > 0 {
 		for _, e := range m.FieldD {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -18919,15 +18919,15 @@ func (m *CustomNameCustomType) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameNinEmbeddedStructUnion) Size() (n int) {
+func (m *CustomNameNinEmbeddedStructUnion) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.NidOptNative != nil {
-		l = m.NidOptNative.Size()
+		l = m.NidOptNative.ProtoSize()
 		n += 1 + l + sovThetest(uint64(l))
 	}
 	if m.FieldA != nil {
-		l = m.FieldA.Size()
+		l = m.FieldA.ProtoSize()
 		n += 2 + l + sovThetest(uint64(l))
 	}
 	if m.FieldB != nil {
@@ -18939,7 +18939,7 @@ func (m *CustomNameNinEmbeddedStructUnion) Size() (n int) {
 	return n
 }
 
-func (m *CustomNameEnum) Size() (n int) {
+func (m *CustomNameEnum) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.FieldA != nil {
@@ -18956,7 +18956,7 @@ func (m *CustomNameEnum) Size() (n int) {
 	return n
 }
 
-func (m *NoExtensionsMap) Size() (n int) {
+func (m *NoExtensionsMap) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18971,7 +18971,7 @@ func (m *NoExtensionsMap) Size() (n int) {
 	return n
 }
 
-func (m *Unrecognized) Size() (n int) {
+func (m *Unrecognized) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -18981,12 +18981,12 @@ func (m *Unrecognized) Size() (n int) {
 	return n
 }
 
-func (m *UnrecognizedWithInner) Size() (n int) {
+func (m *UnrecognizedWithInner) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Embedded) > 0 {
 		for _, e := range m.Embedded {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovThetest(uint64(l))
 		}
 	}
@@ -19000,7 +19000,7 @@ func (m *UnrecognizedWithInner) Size() (n int) {
 	return n
 }
 
-func (m *UnrecognizedWithInner_Inner) Size() (n int) {
+func (m *UnrecognizedWithInner_Inner) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -19009,10 +19009,10 @@ func (m *UnrecognizedWithInner_Inner) Size() (n int) {
 	return n
 }
 
-func (m *UnrecognizedWithEmbed) Size() (n int) {
+func (m *UnrecognizedWithEmbed) ProtoSize() (n int) {
 	var l int
 	_ = l
-	l = m.UnrecognizedWithEmbed_Embedded.Size()
+	l = m.UnrecognizedWithEmbed_Embedded.ProtoSize()
 	n += 1 + l + sovThetest(uint64(l))
 	if m.Field2 != nil {
 		l = len(*m.Field2)
@@ -19024,7 +19024,7 @@ func (m *UnrecognizedWithEmbed) Size() (n int) {
 	return n
 }
 
-func (m *UnrecognizedWithEmbed_Embedded) Size() (n int) {
+func (m *UnrecognizedWithEmbed_Embedded) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {

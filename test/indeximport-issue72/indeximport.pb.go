@@ -81,7 +81,7 @@ func (this *IndexQueries) Equal(that interface{}) bool {
 	return true
 }
 func (m *IndexQueries) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -99,7 +99,7 @@ func (m *IndexQueries) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.Queries {
 			data[i] = 0xa
 			i++
-			i = encodeVarintIndeximport(data, i, uint64(msg.Size()))
+			i = encodeVarintIndeximport(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -227,12 +227,12 @@ func encodeVarintPopulateIndeximport(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *IndexQueries) Size() (n int) {
+func (m *IndexQueries) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Queries) > 0 {
 		for _, e := range m.Queries {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovIndeximport(uint64(l))
 		}
 	}

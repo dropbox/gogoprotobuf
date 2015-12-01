@@ -2428,7 +2428,7 @@ func encodeVarintPopulateMapsproto2(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *FloatingPoint) Size() (n int) {
+func (m *FloatingPoint) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.F != nil {
@@ -2440,7 +2440,7 @@ func (m *FloatingPoint) Size() (n int) {
 	return n
 }
 
-func (m *AllMaps) Size() (n int) {
+func (m *AllMaps) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.StringToDoubleMap) > 0 {
@@ -2577,7 +2577,7 @@ func (m *AllMaps) Size() (n int) {
 			_ = v
 			l = 0
 			if v != nil {
-				l = v.Size()
+				l = v.ProtoSize()
 			}
 			mapEntrySize := 1 + len(k) + sovMapsproto2(uint64(len(k))) + 1 + l + sovMapsproto2(uint64(l))
 			n += mapEntrySize + 2 + sovMapsproto2(uint64(mapEntrySize))
@@ -2819,7 +2819,7 @@ func valueToStringMapsproto2(v interface{}) string {
 	return fmt.Sprintf("*%v", pv)
 }
 func (m *FloatingPoint) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -2846,7 +2846,7 @@ func (m *FloatingPoint) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *AllMaps) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -3129,7 +3129,7 @@ func (m *AllMaps) MarshalTo(data []byte) (int, error) {
 			if v == nil {
 				return 0, errors.New("proto: map has nil element")
 			}
-			msgSize := v.Size()
+			msgSize := v.ProtoSize()
 			mapSize := 1 + len(k) + sovMapsproto2(uint64(len(k))) + 1 + msgSize + sovMapsproto2(uint64(msgSize))
 			i = encodeVarintMapsproto2(data, i, uint64(mapSize))
 			data[i] = 0xa
@@ -3138,7 +3138,7 @@ func (m *AllMaps) MarshalTo(data []byte) (int, error) {
 			i += copy(data[i:], k)
 			data[i] = 0x12
 			i++
-			i = encodeVarintMapsproto2(data, i, uint64(v.Size()))
+			i = encodeVarintMapsproto2(data, i, uint64(v.ProtoSize()))
 			n1, err := v.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err

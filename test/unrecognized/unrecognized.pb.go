@@ -2460,7 +2460,7 @@ func extensionToGoStringUnrecognized(e map[int32]github_com_gogo_protobuf_proto.
 	return s
 }
 func (m *A) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -2478,7 +2478,7 @@ func (m *A) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.B {
 			data[i] = 0xa
 			i++
-			i = encodeVarintUnrecognized(data, i, uint64(msg.Size()))
+			i = encodeVarintUnrecognized(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -2495,7 +2495,7 @@ func (m *A) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *B) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -2512,7 +2512,7 @@ func (m *B) MarshalTo(data []byte) (int, error) {
 	if m.C != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintUnrecognized(data, i, uint64(m.C.Size()))
+		i = encodeVarintUnrecognized(data, i, uint64(m.C.ProtoSize()))
 		n1, err := m.C.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -2522,7 +2522,7 @@ func (m *B) MarshalTo(data []byte) (int, error) {
 	if m.D != nil {
 		data[i] = 0x12
 		i++
-		i = encodeVarintUnrecognized(data, i, uint64(m.D.Size()))
+		i = encodeVarintUnrecognized(data, i, uint64(m.D.ProtoSize()))
 		n2, err := m.D.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -2532,7 +2532,7 @@ func (m *B) MarshalTo(data []byte) (int, error) {
 	if m.F != nil {
 		data[i] = 0x2a
 		i++
-		i = encodeVarintUnrecognized(data, i, uint64(m.F.Size()))
+		i = encodeVarintUnrecognized(data, i, uint64(m.F.ProtoSize()))
 		n3, err := m.F.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -2546,7 +2546,7 @@ func (m *B) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *D) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -2572,7 +2572,7 @@ func (m *D) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *C) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -2637,7 +2637,7 @@ func (m *C) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *U) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -2683,7 +2683,7 @@ func (m *U) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *OldA) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -2701,7 +2701,7 @@ func (m *OldA) MarshalTo(data []byte) (int, error) {
 		for _, msg := range m.B {
 			data[i] = 0xa
 			i++
-			i = encodeVarintUnrecognized(data, i, uint64(msg.Size()))
+			i = encodeVarintUnrecognized(data, i, uint64(msg.ProtoSize()))
 			n, err := msg.MarshalTo(data[i:])
 			if err != nil {
 				return 0, err
@@ -2718,7 +2718,7 @@ func (m *OldA) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *OldB) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -2735,7 +2735,7 @@ func (m *OldB) MarshalTo(data []byte) (int, error) {
 	if m.C != nil {
 		data[i] = 0xa
 		i++
-		i = encodeVarintUnrecognized(data, i, uint64(m.C.Size()))
+		i = encodeVarintUnrecognized(data, i, uint64(m.C.ProtoSize()))
 		n6, err := m.C.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -2745,7 +2745,7 @@ func (m *OldB) MarshalTo(data []byte) (int, error) {
 	if m.F != nil {
 		data[i] = 0x2a
 		i++
-		i = encodeVarintUnrecognized(data, i, uint64(m.F.Size()))
+		i = encodeVarintUnrecognized(data, i, uint64(m.F.ProtoSize()))
 		n7, err := m.F.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
@@ -2759,7 +2759,7 @@ func (m *OldB) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *OldC) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -2816,7 +2816,7 @@ func (m *OldC) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *OldU) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -3235,12 +3235,12 @@ func encodeVarintPopulateUnrecognized(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *A) Size() (n int) {
+func (m *A) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.B) > 0 {
 		for _, e := range m.B {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovUnrecognized(uint64(l))
 		}
 	}
@@ -3250,19 +3250,19 @@ func (m *A) Size() (n int) {
 	return n
 }
 
-func (m *B) Size() (n int) {
+func (m *B) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.C != nil {
-		l = m.C.Size()
+		l = m.C.ProtoSize()
 		n += 1 + l + sovUnrecognized(uint64(l))
 	}
 	if m.D != nil {
-		l = m.D.Size()
+		l = m.D.ProtoSize()
 		n += 1 + l + sovUnrecognized(uint64(l))
 	}
 	if m.F != nil {
-		l = m.F.Size()
+		l = m.F.ProtoSize()
 		n += 1 + l + sovUnrecognized(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -3271,7 +3271,7 @@ func (m *B) Size() (n int) {
 	return n
 }
 
-func (m *D) Size() (n int) {
+func (m *D) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -3283,7 +3283,7 @@ func (m *D) Size() (n int) {
 	return n
 }
 
-func (m *C) Size() (n int) {
+func (m *C) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field2 != nil {
@@ -3314,7 +3314,7 @@ func (m *C) Size() (n int) {
 	return n
 }
 
-func (m *U) Size() (n int) {
+func (m *U) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.Field2) > 0 {
@@ -3326,12 +3326,12 @@ func (m *U) Size() (n int) {
 	return n
 }
 
-func (m *OldA) Size() (n int) {
+func (m *OldA) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if len(m.B) > 0 {
 		for _, e := range m.B {
-			l = e.Size()
+			l = e.ProtoSize()
 			n += 1 + l + sovUnrecognized(uint64(l))
 		}
 	}
@@ -3341,15 +3341,15 @@ func (m *OldA) Size() (n int) {
 	return n
 }
 
-func (m *OldB) Size() (n int) {
+func (m *OldB) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.C != nil {
-		l = m.C.Size()
+		l = m.C.ProtoSize()
 		n += 1 + l + sovUnrecognized(uint64(l))
 	}
 	if m.F != nil {
-		l = m.F.Size()
+		l = m.F.ProtoSize()
 		n += 1 + l + sovUnrecognized(uint64(l))
 	}
 	if m.XXX_unrecognized != nil {
@@ -3358,7 +3358,7 @@ func (m *OldB) Size() (n int) {
 	return n
 }
 
-func (m *OldC) Size() (n int) {
+func (m *OldC) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {
@@ -3383,7 +3383,7 @@ func (m *OldC) Size() (n int) {
 	return n
 }
 
-func (m *OldU) Size() (n int) {
+func (m *OldU) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Field1 != nil {

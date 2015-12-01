@@ -79,7 +79,7 @@ func init() {
 	proto.RegisterType((*OrderedFields)(nil), "issue42.OrderedFields")
 }
 func (m *UnorderedFields) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -110,7 +110,7 @@ func (m *UnorderedFields) MarshalTo(data []byte) (int, error) {
 }
 
 func (m *OrderedFields) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -277,7 +277,7 @@ func encodeVarintPopulateIssue42(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *UnorderedFields) Size() (n int) {
+func (m *UnorderedFields) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.B != nil {
@@ -292,7 +292,7 @@ func (m *UnorderedFields) Size() (n int) {
 	return n
 }
 
-func (m *OrderedFields) Size() (n int) {
+func (m *OrderedFields) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.B != nil {

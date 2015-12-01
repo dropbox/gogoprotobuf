@@ -63,7 +63,7 @@ func TestSizeMessageMarshalTo(t *testing.T) {
 	seed := time.Now().UnixNano()
 	popr := math_rand.New(math_rand.NewSource(seed))
 	p := NewPopulatedSizeMessage(popr, false)
-	size := p.Size()
+	size := p.ProtoSize()
 	data := make([]byte, size)
 	for i := range data {
 		data[i] = byte(popr.Intn(256))
@@ -139,7 +139,7 @@ func TestSizeMessageSize(t *testing.T) {
 	if err != nil {
 		t.Fatalf("seed = %d, err = %v", seed, err)
 	}
-	size := p.Size()
+	size := p.ProtoSize()
 	if len(data) != size {
 		t.Errorf("seed = %d, size %v != marshalled size %v", seed, size, len(data))
 	}

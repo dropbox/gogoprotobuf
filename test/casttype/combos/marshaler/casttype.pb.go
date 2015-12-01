@@ -1247,7 +1247,7 @@ func extensionToGoStringCasttype(e map[int32]github_com_gogo_protobuf_proto.Exte
 	return s
 }
 func (m *Castaway) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -1446,7 +1446,7 @@ func encodeVarintPopulateCasttype(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *Castaway) Size() (n int) {
+func (m *Castaway) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Int32Ptr != nil {

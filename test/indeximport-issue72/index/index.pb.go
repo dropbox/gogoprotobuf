@@ -98,7 +98,7 @@ func (this *IndexQuery) Equal(that interface{}) bool {
 	return true
 }
 func (m *IndexQuery) Marshal() (data []byte, err error) {
-	size := m.Size()
+	size := m.ProtoSize()
 	data = make([]byte, size)
 	n, err := m.MarshalTo(data)
 	if err != nil {
@@ -245,7 +245,7 @@ func encodeVarintPopulateIndex(data []byte, v uint64) []byte {
 	data = append(data, uint8(v))
 	return data
 }
-func (m *IndexQuery) Size() (n int) {
+func (m *IndexQuery) ProtoSize() (n int) {
 	var l int
 	_ = l
 	if m.Key != nil {
