@@ -1766,7 +1766,7 @@ var methodNames = [...]string{
 	"ExtensionRangeArray",
 	"ExtensionMap",
 	"Descriptor",
-	"Size",
+	"ProtoSize",
 	"MarshalTo",
 	"Equal",
 	"VerboseEqual",
